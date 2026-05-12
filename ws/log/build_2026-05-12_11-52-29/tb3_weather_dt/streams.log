@@ -1,0 +1,18 @@
+[0.904s] Invoking command in '/home/falinux/team28/ws/build/tb3_weather_dt': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/team28/ws/build/tb3_weather_dt/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/falinux/team28/ws/build/tb3_weather_dt/build --no-deps symlink_data
+[1.144s] running develop
+[1.295s] running egg_info
+[1.310s] writing tb3_weather_dt.egg-info/PKG-INFO
+[1.311s] writing dependency_links to tb3_weather_dt.egg-info/dependency_links.txt
+[1.311s] writing entry points to tb3_weather_dt.egg-info/entry_points.txt
+[1.311s] writing requirements to tb3_weather_dt.egg-info/requires.txt
+[1.311s] writing top-level names to tb3_weather_dt.egg-info/top_level.txt
+[1.340s] reading manifest file 'tb3_weather_dt.egg-info/SOURCES.txt'
+[1.341s] writing manifest file 'tb3_weather_dt.egg-info/SOURCES.txt'
+[1.358s] running build_ext
+[1.358s] Creating /home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages/tb3-weather-dt.egg-link (link to .)
+[1.358s] Installing twin_safety_supervisor script to /home/falinux/team28/ws/install/tb3_weather_dt/lib/tb3_weather_dt
+[1.358s] Installing weather_adapter script to /home/falinux/team28/ws/install/tb3_weather_dt/lib/tb3_weather_dt
+[1.358s] 
+[1.358s] Installed /home/falinux/team28/ws/build/tb3_weather_dt
+[1.359s] running symlink_data
+[1.404s] Invoked command in '/home/falinux/team28/ws/build/tb3_weather_dt' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/team28/ws/build/tb3_weather_dt/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/falinux/team28/ws/build/tb3_weather_dt/build --no-deps symlink_data

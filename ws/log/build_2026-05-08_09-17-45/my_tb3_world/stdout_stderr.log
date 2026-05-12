@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/my_tb3_world/my_tb3_world.egg-info/PKG-INFO
+writing dependency_links to ../../build/my_tb3_world/my_tb3_world.egg-info/dependency_links.txt
+writing entry points to ../../build/my_tb3_world/my_tb3_world.egg-info/entry_points.txt
+writing requirements to ../../build/my_tb3_world/my_tb3_world.egg-info/requires.txt
+writing top-level names to ../../build/my_tb3_world/my_tb3_world.egg-info/top_level.txt
+reading manifest file '../../build/my_tb3_world/my_tb3_world.egg-info/SOURCES.txt'
+writing manifest file '../../build/my_tb3_world/my_tb3_world.egg-info/SOURCES.txt'
+running build
+running build_py
+copying my_tb3_world/publisher_node.py -> /home/falinux/team28/ws/build/my_tb3_world/build/lib/my_tb3_world
+copying my_tb3_world/subscriber_node.py -> /home/falinux/team28/ws/build/my_tb3_world/build/lib/my_tb3_world
+running install
+running install_lib
+copying /home/falinux/team28/ws/build/my_tb3_world/build/lib/my_tb3_world/publisher_node.py -> /home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world
+copying /home/falinux/team28/ws/build/my_tb3_world/build/lib/my_tb3_world/subscriber_node.py -> /home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world
+byte-compiling /home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world/publisher_node.py to publisher_node.cpython-312.pyc
+byte-compiling /home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world/subscriber_node.py to subscriber_node.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/my_tb3_world/my_tb3_world.egg-info to /home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world-0.0.0-py3.12.egg-info
+running install_scripts
+Installing publisher_node script to /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world
+Installing subscriber_node script to /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world
+writing list of installed files to '/home/falinux/team28/ws/build/my_tb3_world/install.log'

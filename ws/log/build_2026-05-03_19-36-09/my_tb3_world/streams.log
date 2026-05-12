@@ -1,0 +1,9 @@
+[0.017s] Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
+[0.038s] [31mCMake Error at CMakeLists.txt:7:
+[0.038s]   Parse error.  Expected a command name, got unquoted argument with text
+[0.038s]   "ﬁnd_package".
+[0.038s] 
+[0.038s] [0m
+[0.039s] -- Configuring incomplete, errors occurred!
+[0.040s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.042s] Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8

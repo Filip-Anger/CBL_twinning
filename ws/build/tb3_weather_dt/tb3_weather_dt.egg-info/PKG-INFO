@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: tb3-weather-dt
+Version: 0.0.0
+Summary: Gazebo-only weather-driven DT supervisor for TurtleBot3
+Maintainer: falinux
+Maintainer-email: filip.anger@gmail.com
+License: Apache-2.0
+Provides-Extra: test

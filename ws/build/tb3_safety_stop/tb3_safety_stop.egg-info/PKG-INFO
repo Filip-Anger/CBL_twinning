@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: tb3-safety-stop
+Version: 0.0.1
+Summary: TurtleBot3 Burger safety stop using lidar and TwistStamped
+Maintainer: Filip_anger
+Maintainer-email: filip.anger@gmail.com
+License: Apache-2.0

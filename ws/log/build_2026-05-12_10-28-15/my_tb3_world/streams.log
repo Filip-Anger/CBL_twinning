@@ -1,0 +1,24 @@
+[1.075s] Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/team28/ws/build/my_tb3_world/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/falinux/team28/ws/build/my_tb3_world/build --no-deps symlink_data --force
+[1.302s] running develop
+[1.443s] running egg_info
+[1.457s] writing my_tb3_world.egg-info/PKG-INFO
+[1.457s] writing dependency_links to my_tb3_world.egg-info/dependency_links.txt
+[1.457s] writing entry points to my_tb3_world.egg-info/entry_points.txt
+[1.457s] writing requirements to my_tb3_world.egg-info/requires.txt
+[1.457s] writing top-level names to my_tb3_world.egg-info/top_level.txt
+[1.485s] reading manifest file 'my_tb3_world.egg-info/SOURCES.txt'
+[1.486s] writing manifest file 'my_tb3_world.egg-info/SOURCES.txt'
+[1.501s] running build_ext
+[1.501s] Creating /home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages/my-tb3-world.egg-link (link to .)
+[1.502s] Installing publisher_node script to /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world
+[1.502s] Installing subscriber_node script to /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world
+[1.502s] 
+[1.502s] Installed /home/falinux/team28/ws/build/my_tb3_world
+[1.502s] running symlink_data
+[1.503s] symbolically linking /home/falinux/team28/ws/build/my_tb3_world/resource/my_tb3_world -> /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/packages
+[1.503s] symbolically linking /home/falinux/team28/ws/build/my_tb3_world/package.xml -> /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world
+[1.503s] symbolically linking /home/falinux/team28/ws/build/my_tb3_world/launch/publisher_node.launch.py -> /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch
+[1.503s] symbolically linking /home/falinux/team28/ws/build/my_tb3_world/launch/new_world.launch.py -> /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch
+[1.504s] symbolically linking /home/falinux/team28/ws/build/my_tb3_world/launch/subscriber_node.launch.py -> /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch
+[1.504s] symbolically linking /home/falinux/team28/ws/build/my_tb3_world/worlds/new_world.world -> /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds
+[1.553s] Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/team28/ws/build/my_tb3_world/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/team28/ws/install/my_tb3_world/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/falinux/team28/ws/build/my_tb3_world/build --no-deps symlink_data --force

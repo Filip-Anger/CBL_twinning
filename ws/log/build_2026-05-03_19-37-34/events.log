@@ -1,0 +1,150 @@
+[0.000000] (-) TimerEvent: {}
+[0.000530] (my_tb3_world) JobQueued: {'identifier': 'my_tb3_world', 'dependencies': OrderedDict()}
+[0.000579] (my_tb3_world) JobStarted: {'identifier': 'my_tb3_world'}
+[0.011149] (my_tb3_world) JobProgress: {'identifier': 'my_tb3_world', 'progress': 'cmake'}
+[0.011375] (my_tb3_world) JobProgress: {'identifier': 'my_tb3_world', 'progress': 'build'}
+[0.011870] (my_tb3_world) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/falinux/team28/ws/build/my_tb3_world', '--', '-j8', '-l8'], 'cwd': '/home/falinux/team28/ws/build/my_tb3_world', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'falinux', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/falinux', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/falinux/team28', 'CAML_LD_LIBRARY_PATH': '/home/falinux/.opam/default/lib/stublibs:/usr/local/lib/ocaml/4.14.1/stublibs:/usr/lib/ocaml/stublibs', 'DESKTOP_SESSION': 'ubuntu-xorg', 'NVM_BIN': '/home/falinux/.nvm/versions/node/v25.3.0/bin', 'OCAML_TOPLEVEL_PATH': '/home/falinux/.opam/default/lib/toplevel', 'NVM_INC': '/home/falinux/.nvm/versions/node/v25.3.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'DIRENV_DIFF': 'eJxsykHbYkAcAPDv8j83y9tGchsZi-SlJPYyz5CiMklh0tN339M-e9n77w0N6O_PBDjobzCdDfFjajob0AFJ5a0upCO7VrwT0rNg9VSDyV9kOR4BHf6HpB8F79v8n93jaGmTLehQuEIeH9ZKmDjEvkHrJPjNMv_pdvxwQ8YhIENNROP8kquRybZ2QKgKqDGbf9FB8KlpJcu2m3rV5UbtMv5S_EHpi_MrG_Cy949MW6lDRGLeXrXdWrO960NBw6LPwjkiRzVm93xtjTM1TfNFcK5isaK7LfNZo1pK2uTkJBtikRZZ1HEeiqQUrhukmpvZrlE6Yz4fW0a2j5g-k9cM0X2pURxiTCnC98spgglEu03kEeM7-knX3ybxQIesa09FC5_PnwAAAP__iE51rQ==', 'SYSTEMD_EXEC_PID': '3778', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'NVM_DIR': '/home/falinux/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/falinux/team28/ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'falinux', 'DIRENV_FILE': '/home/falinux/team28/.envrc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'falinux', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/falinux/.nvm/versions/node/v25.3.0/bin:/home/falinux/anaconda3/condabin:/home/falinux/.juliaup/bin:/home/falinux/.opam/default/bin:/home/falinux/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/falinux/.local/bin: /home/falinux/Downloads/apache-maven-3.9.15-bin/apache-maven-3.9.15/bin:/home/falinux/.local/bin', 'SESSION_MANAGER': 'local/falinux-Yoga-7-14ITL5:@/tmp/.ICE-unix/3732,unix/falinux-Yoga-7-14ITL5:/tmp/.ICE-unix/3732', 'DIRENV_WATCHES': 'eJx0zsFKxDAQANB_mXPZabNtJundo-BdPEwmExpIG0iza0H8d--iP_B471_wxn2DFXCru2Liko_HhV15Nw5vejybwACvNfa8K6wTEVnrl8UM8HLls5-w9vbQ7-Ef6VaqcMFz46YYc9PjiVxK_USaNap6F5YpcEg0Bx9YebTunnQxXhxJJPY8JbHJBhIzc7zraESsV_tXy4-_Wh8_AQAA__-AqkgT', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/169f4701_ceb4_48a7_af7b_73fa5eaec26b', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.172', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/falinux/team28/ws/install/my_tb3_world:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/falinux/anaconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'DIRENV_DIR': '-/home/falinux/team28', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'OCAMLTOP_INCLUDE_PATH': '/home/falinux/.opam/default/lib/toplevel:', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'OPAM_SWITCH_PREFIX': '/home/falinux/.opam/default', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/jdk-25-oracle-x64/', 'PWD': '/home/falinux/team28/ws/build/my_tb3_world', 'TURTLEBOT3_MODEL': 'burger', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'CONDA_EXE': '/home/falinux/anaconda3/bin/conda', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/home/falinux/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'MANPATH': '/home/falinux/.nvm/versions/node/v25.3.0/share/man::/home/falinux/.opam/default/man', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/falinux/team28/ws/install/my_tb3_world:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.049014] (my_tb3_world) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099742] (-) TimerEvent: {}
+[0.200118] (-) TimerEvent: {}
+[0.300517] (-) TimerEvent: {}
+[0.400892] (-) TimerEvent: {}
+[0.406330] (my_tb3_world) StdoutLine: {'line': b'-- Found rclcpp: 28.1.18 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.478204] (my_tb3_world) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.499623] (my_tb3_world) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.500955] (-) TimerEvent: {}
+[0.526465] (my_tb3_world) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.552921] (my_tb3_world) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.601077] (-) TimerEvent: {}
+[0.663260] (my_tb3_world) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.668486] (my_tb3_world) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.701185] (-) TimerEvent: {}
+[0.797452] (my_tb3_world) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[0.801297] (-) TimerEvent: {}
+[0.841005] (my_tb3_world) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[0.870998] (my_tb3_world) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.901411] (-) TimerEvent: {}
+[0.999186] (my_tb3_world) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.7 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.001477] (-) TimerEvent: {}
+[1.101705] (-) TimerEvent: {}
+[1.191239] (my_tb3_world) StdoutLine: {'line': b'-- Configuring done (1.2s)\n'}
+[1.201794] (-) TimerEvent: {}
+[1.213021] (my_tb3_world) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.221666] (my_tb3_world) StdoutLine: {'line': b'-- Build files have been written to: /home/falinux/team28/ws/build/my_tb3_world\n'}
+[1.284900] (my_tb3_world) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/laser_listener.dir/src/laser_listener.cpp.o\x1b[0m\n'}
+[1.301935] (-) TimerEvent: {}
+[1.402367] (-) TimerEvent: {}
+[1.502715] (-) TimerEvent: {}
+[1.603065] (-) TimerEvent: {}
+[1.703390] (-) TimerEvent: {}
+[1.803691] (-) TimerEvent: {}
+[1.904051] (-) TimerEvent: {}
+[2.004372] (-) TimerEvent: {}
+[2.104728] (-) TimerEvent: {}
+[2.204995] (-) TimerEvent: {}
+[2.305256] (-) TimerEvent: {}
+[2.405666] (-) TimerEvent: {}
+[2.506346] (-) TimerEvent: {}
+[2.606810] (-) TimerEvent: {}
+[2.707183] (-) TimerEvent: {}
+[2.807454] (-) TimerEvent: {}
+[2.907721] (-) TimerEvent: {}
+[3.008019] (-) TimerEvent: {}
+[3.108291] (-) TimerEvent: {}
+[3.208580] (-) TimerEvent: {}
+[3.308842] (-) TimerEvent: {}
+[3.409130] (-) TimerEvent: {}
+[3.509378] (-) TimerEvent: {}
+[3.609627] (-) TimerEvent: {}
+[3.709886] (-) TimerEvent: {}
+[3.810150] (-) TimerEvent: {}
+[3.910399] (-) TimerEvent: {}
+[4.010699] (-) TimerEvent: {}
+[4.111009] (-) TimerEvent: {}
+[4.211313] (-) TimerEvent: {}
+[4.311618] (-) TimerEvent: {}
+[4.411935] (-) TimerEvent: {}
+[4.512250] (-) TimerEvent: {}
+[4.612518] (-) TimerEvent: {}
+[4.712775] (-) TimerEvent: {}
+[4.813079] (-) TimerEvent: {}
+[4.913336] (-) TimerEvent: {}
+[5.013591] (-) TimerEvent: {}
+[5.113863] (-) TimerEvent: {}
+[5.214176] (-) TimerEvent: {}
+[5.314424] (-) TimerEvent: {}
+[5.414676] (-) TimerEvent: {}
+[5.515205] (-) TimerEvent: {}
+[5.615466] (-) TimerEvent: {}
+[5.715717] (-) TimerEvent: {}
+[5.815991] (-) TimerEvent: {}
+[5.916454] (-) TimerEvent: {}
+[6.016739] (-) TimerEvent: {}
+[6.116992] (-) TimerEvent: {}
+[6.217288] (-) TimerEvent: {}
+[6.317788] (-) TimerEvent: {}
+[6.418134] (-) TimerEvent: {}
+[6.518458] (-) TimerEvent: {}
+[6.618741] (-) TimerEvent: {}
+[6.719043] (-) TimerEvent: {}
+[6.819337] (-) TimerEvent: {}
+[6.919593] (-) TimerEvent: {}
+[7.019847] (-) TimerEvent: {}
+[7.120139] (-) TimerEvent: {}
+[7.220433] (-) TimerEvent: {}
+[7.320811] (-) TimerEvent: {}
+[7.421487] (-) TimerEvent: {}
+[7.522343] (-) TimerEvent: {}
+[7.623187] (-) TimerEvent: {}
+[7.723692] (-) TimerEvent: {}
+[7.823961] (-) TimerEvent: {}
+[7.924283] (-) TimerEvent: {}
+[8.024618] (-) TimerEvent: {}
+[8.124918] (-) TimerEvent: {}
+[8.225198] (-) TimerEvent: {}
+[8.325445] (-) TimerEvent: {}
+[8.425699] (-) TimerEvent: {}
+[8.525996] (-) TimerEvent: {}
+[8.626278] (-) TimerEvent: {}
+[8.726527] (-) TimerEvent: {}
+[8.826759] (-) TimerEvent: {}
+[8.927022] (-) TimerEvent: {}
+[9.027300] (-) TimerEvent: {}
+[9.127556] (-) TimerEvent: {}
+[9.227808] (-) TimerEvent: {}
+[9.328029] (-) TimerEvent: {}
+[9.367662] (my_tb3_world) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable laser_listener\x1b[0m\n'}
+[9.428190] (-) TimerEvent: {}
+[9.528537] (-) TimerEvent: {}
+[9.628822] (-) TimerEvent: {}
+[9.727413] (my_tb3_world) StdoutLine: {'line': b'[100%] Built target laser_listener\n'}
+[9.728890] (-) TimerEvent: {}
+[9.740606] (my_tb3_world) CommandEnded: {'returncode': 0}
+[9.741281] (my_tb3_world) JobProgress: {'identifier': 'my_tb3_world', 'progress': 'install'}
+[9.750271] (my_tb3_world) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/falinux/team28/ws/build/my_tb3_world'], 'cwd': '/home/falinux/team28/ws/build/my_tb3_world', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'falinux', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/falinux', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/falinux/team28', 'CAML_LD_LIBRARY_PATH': '/home/falinux/.opam/default/lib/stublibs:/usr/local/lib/ocaml/4.14.1/stublibs:/usr/lib/ocaml/stublibs', 'DESKTOP_SESSION': 'ubuntu-xorg', 'NVM_BIN': '/home/falinux/.nvm/versions/node/v25.3.0/bin', 'OCAML_TOPLEVEL_PATH': '/home/falinux/.opam/default/lib/toplevel', 'NVM_INC': '/home/falinux/.nvm/versions/node/v25.3.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'DIRENV_DIFF': 'eJxsykHbYkAcAPDv8j83y9tGchsZi-SlJPYyz5CiMklh0tN339M-e9n77w0N6O_PBDjobzCdDfFjajob0AFJ5a0upCO7VrwT0rNg9VSDyV9kOR4BHf6HpB8F79v8n93jaGmTLehQuEIeH9ZKmDjEvkHrJPjNMv_pdvxwQ8YhIENNROP8kquRybZ2QKgKqDGbf9FB8KlpJcu2m3rV5UbtMv5S_EHpi_MrG_Cy949MW6lDRGLeXrXdWrO960NBw6LPwjkiRzVm93xtjTM1TfNFcK5isaK7LfNZo1pK2uTkJBtikRZZ1HEeiqQUrhukmpvZrlE6Yz4fW0a2j5g-k9cM0X2pURxiTCnC98spgglEu03kEeM7-knX3ybxQIesa09FC5_PnwAAAP__iE51rQ==', 'SYSTEMD_EXEC_PID': '3778', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'NVM_DIR': '/home/falinux/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/falinux/team28/ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'falinux', 'DIRENV_FILE': '/home/falinux/team28/.envrc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'falinux', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/falinux/.nvm/versions/node/v25.3.0/bin:/home/falinux/anaconda3/condabin:/home/falinux/.juliaup/bin:/home/falinux/.opam/default/bin:/home/falinux/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/falinux/.local/bin: /home/falinux/Downloads/apache-maven-3.9.15-bin/apache-maven-3.9.15/bin:/home/falinux/.local/bin', 'SESSION_MANAGER': 'local/falinux-Yoga-7-14ITL5:@/tmp/.ICE-unix/3732,unix/falinux-Yoga-7-14ITL5:/tmp/.ICE-unix/3732', 'DIRENV_WATCHES': 'eJx0zsFKxDAQANB_mXPZabNtJundo-BdPEwmExpIG0iza0H8d--iP_B471_wxn2DFXCru2Liko_HhV15Nw5vejybwACvNfa8K6wTEVnrl8UM8HLls5-w9vbQ7-Ef6VaqcMFz46YYc9PjiVxK_USaNap6F5YpcEg0Bx9YebTunnQxXhxJJPY8JbHJBhIzc7zraESsV_tXy4-_Wh8_AQAA__-AqkgT', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/169f4701_ceb4_48a7_af7b_73fa5eaec26b', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.172', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/falinux/team28/ws/install/my_tb3_world:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/falinux/anaconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu-xorg', 'DIRENV_DIR': '-/home/falinux/team28', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'OCAMLTOP_INCLUDE_PATH': '/home/falinux/.opam/default/lib/toplevel:', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'OPAM_SWITCH_PREFIX': '/home/falinux/.opam/default', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/jdk-25-oracle-x64/', 'PWD': '/home/falinux/team28/ws/build/my_tb3_world', 'TURTLEBOT3_MODEL': 'burger', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'CONDA_EXE': '/home/falinux/anaconda3/bin/conda', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/home/falinux/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'MANPATH': '/home/falinux/.nvm/versions/node/v25.3.0/share/man::/home/falinux/.opam/default/man', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/falinux/team28/ws/install/my_tb3_world:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[9.760212] (my_tb3_world) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.760504] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch\n'}
+[9.760609] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch/new_world.launch.py\n'}
+[9.760705] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds\n'}
+[9.760834] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds/new_world.world\n'}
+[9.760954] (my_tb3_world) StdoutLine: {'line': b'-- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.xml\n'}
+[9.761135] (my_tb3_world) StdoutLine: {'line': b'-- Installing: /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world/laser_listener\n'}
+[9.764505] (my_tb3_world) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world/laser_listener" to ""\n'}
+[9.764674] (my_tb3_world) StdoutLine: {'line': b'-- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/package_run_dependencies/my_tb3_world\n'}
+[9.765184] (my_tb3_world) StdoutLine: {'line': b'-- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/parent_prefix_path/my_tb3_world\n'}
+[9.765411] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/ament_prefix_path.sh\n'}
+[9.765575] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/ament_prefix_path.dsv\n'}
+[9.765743] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/path.sh\n'}
+[9.765886] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/path.dsv\n'}
+[9.766046] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.bash\n'}
+[9.766169] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.sh\n'}
+[9.766289] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.zsh\n'}
+[9.766410] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.dsv\n'}
+[9.766630] (my_tb3_world) StdoutLine: {'line': b'-- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.dsv\n'}
+[9.766728] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/packages/my_tb3_world\n'}
+[9.766848] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/cmake/my_tb3_worldConfig.cmake\n'}
+[9.766974] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/cmake/my_tb3_worldConfig-version.cmake\n'}
+[9.767119] (my_tb3_world) StdoutLine: {'line': b'-- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.xml\n'}
+[9.768510] (my_tb3_world) CommandEnded: {'returncode': 0}
+[9.795016] (my_tb3_world) JobEnded: {'identifier': 'my_tb3_world', 'rc': 0}
+[9.796173] (-) EventReactorShutdown: {}

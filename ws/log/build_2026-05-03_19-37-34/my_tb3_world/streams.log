@@ -1,0 +1,45 @@
+[0.013s] Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
+[0.049s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.406s] -- Found rclcpp: 28.1.18 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.478s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.499s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.526s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.553s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.663s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.668s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.797s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.841s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.871s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.999s] -- Found sensor_msgs: 5.3.7 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.191s] -- Configuring done (1.2s)
+[1.213s] -- Generating done (0.0s)
+[1.221s] -- Build files have been written to: /home/falinux/team28/ws/build/my_tb3_world
+[1.285s] [ 50%] [32mBuilding CXX object CMakeFiles/laser_listener.dir/src/laser_listener.cpp.o[0m
+[9.367s] [100%] [32m[1mLinking CXX executable laser_listener[0m
+[9.727s] [100%] Built target laser_listener
+[9.740s] Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
+[9.750s] Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/falinux/team28/ws/build/my_tb3_world
+[9.760s] -- Install configuration: ""
+[9.760s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch
+[9.760s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch/new_world.launch.py
+[9.760s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds
+[9.760s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds/new_world.world
+[9.760s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.xml
+[9.761s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world/laser_listener
+[9.764s] -- Set non-toolchain portion of runtime path of "/home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world/laser_listener" to ""
+[9.764s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/package_run_dependencies/my_tb3_world
+[9.765s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/parent_prefix_path/my_tb3_world
+[9.765s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/ament_prefix_path.sh
+[9.765s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/ament_prefix_path.dsv
+[9.765s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/path.sh
+[9.765s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/path.dsv
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.bash
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.sh
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.zsh
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.dsv
+[9.766s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.dsv
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/packages/my_tb3_world
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/cmake/my_tb3_worldConfig.cmake
+[9.766s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/cmake/my_tb3_worldConfig-version.cmake
+[9.767s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.xml
+[9.769s] Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/falinux/team28/ws/build/my_tb3_world

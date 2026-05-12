@@ -1,0 +1,3 @@
+[console_scripts]
+twin_safety_supervisor = tb3_weather_dt.twin_safety_supervisor:main
+weather_adapter = tb3_weather_dt.weather_adapter:main

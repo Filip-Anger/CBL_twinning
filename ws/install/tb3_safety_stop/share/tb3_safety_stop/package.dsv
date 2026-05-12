@@ -1,0 +1,6 @@
+source;share/tb3_safety_stop/hook/pythonpath.dsv
+source;share/tb3_safety_stop/hook/pythonpath.sh
+source;share/tb3_safety_stop/hook/ament_prefix_path.dsv
+source;share/tb3_safety_stop/hook/ament_prefix_path.sh
+source;../../build/tb3_safety_stop/share/tb3_safety_stop/hook/pythonpath_develop.dsv
+source;../../build/tb3_safety_stop/share/tb3_safety_stop/hook/pythonpath_develop.sh

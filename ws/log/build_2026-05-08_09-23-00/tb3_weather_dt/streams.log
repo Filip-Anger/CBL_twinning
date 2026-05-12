@@ -1,0 +1,19 @@
+[1.033s] Invoking command in '/home/falinux/team28/ws/src/tb3_weather_dt': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/team28/ws/build/tb3_weather_dt/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tb3_weather_dt build --build-base /home/falinux/team28/ws/build/tb3_weather_dt/build install --record /home/falinux/team28/ws/build/tb3_weather_dt/install.log --single-version-externally-managed install_data
+[1.300s] running egg_info
+[1.322s] writing ../../build/tb3_weather_dt/tb3_weather_dt.egg-info/PKG-INFO
+[1.322s] writing dependency_links to ../../build/tb3_weather_dt/tb3_weather_dt.egg-info/dependency_links.txt
+[1.322s] writing requirements to ../../build/tb3_weather_dt/tb3_weather_dt.egg-info/requires.txt
+[1.322s] writing top-level names to ../../build/tb3_weather_dt/tb3_weather_dt.egg-info/top_level.txt
+[1.363s] reading manifest file '../../build/tb3_weather_dt/tb3_weather_dt.egg-info/SOURCES.txt'
+[1.364s] writing manifest file '../../build/tb3_weather_dt/tb3_weather_dt.egg-info/SOURCES.txt'
+[1.364s] running build
+[1.364s] running build_py
+[1.364s] running install
+[1.371s] running install_lib
+[1.391s] running install_data
+[1.391s] running install_egg_info
+[1.414s] removing '/home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages/tb3_weather_dt-0.0.0-py3.12.egg-info' (and everything under it)
+[1.415s] Copying ../../build/tb3_weather_dt/tb3_weather_dt.egg-info to /home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages/tb3_weather_dt-0.0.0-py3.12.egg-info
+[1.415s] running install_scripts
+[1.566s] writing list of installed files to '/home/falinux/team28/ws/build/tb3_weather_dt/install.log'
+[1.602s] Invoked command in '/home/falinux/team28/ws/src/tb3_weather_dt' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/team28/ws/build/tb3_weather_dt/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/team28/ws/install/tb3_weather_dt/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tb3_weather_dt build --build-base /home/falinux/team28/ws/build/tb3_weather_dt/build install --record /home/falinux/team28/ws/build/tb3_weather_dt/install.log --single-version-externally-managed install_data

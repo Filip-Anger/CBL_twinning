@@ -1,0 +1,31 @@
+[0.008s] Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/falinux/team28/ws/install/tb3_weather_dt:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
+[0.048s] [100%] Built target laser_listener
+[0.048s] [100%] Built target move_publisher
+[0.056s] Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/falinux/team28/ws/install/tb3_weather_dt:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
+[0.063s] Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/falinux/team28/ws/install/tb3_weather_dt:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/falinux/team28/ws/build/my_tb3_world
+[0.068s] -- Install configuration: ""
+[0.068s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch/new_world.launch.py
+[0.069s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/launch/subscriber_node.launch.py
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds/new_world.world
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/worlds/Cone_world.sdf
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.xml
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world/laser_listener
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/lib/my_tb3_world/move_publisher
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/package_run_dependencies/my_tb3_world
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/parent_prefix_path/my_tb3_world
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/ament_prefix_path.sh
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/ament_prefix_path.dsv
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/path.sh
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/environment/path.dsv
+[0.069s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.bash
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.sh
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.zsh
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/local_setup.dsv
+[0.070s] -- Installing: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.dsv
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/ament_index/resource_index/packages/my_tb3_world
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/cmake/my_tb3_worldConfig.cmake
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/cmake/my_tb3_worldConfig-version.cmake
+[0.070s] -- Up-to-date: /home/falinux/team28/ws/install/my_tb3_world/share/my_tb3_world/package.xml
+[0.071s] Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/falinux/team28/ws/install/tb3_weather_dt:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/falinux/team28/ws/build/my_tb3_world
