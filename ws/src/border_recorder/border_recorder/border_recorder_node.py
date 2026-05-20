@@ -2,7 +2,7 @@
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
-"""Border Recorder Node — records SLAM path via TF and exports as polygon."""
+"""Border Recorder Node — records odometry path and exports as polygon."""
 
 import json
 import math
@@ -11,10 +11,8 @@ from datetime import datetime
 
 import rclpy
 from rclpy.node import Node
-from rclpy.duration import Duration
+from nav_msgs.msg import Odometry
 from std_srvs.srv import Trigger
-from tf2_ros import Buffer, TransformListener, LookupException
-from tf2_ros import ConnectivityException, ExtrapolationException
 
 
 class BorderRecorderNode(Node):
@@ -24,36 +22,31 @@ class BorderRecorderNode(Node):
         super().__init__('border_recorder_node')
 
         # ---------- Parameters ----------
-        self.declare_parameter('map_frame', 'map')
-        self.declare_parameter('robot_frame', 'base_link')
-        self.declare_parameter('min_distance', 0.1)        # metres between recorded points
+        self.declare_parameter('odom_topic', '/odom')
+        self.declare_parameter('min_distance', 0.1)       # metres between recorded points
         self.declare_parameter('output_dir', '~/border_maps')
         self.declare_parameter('simplify_tolerance', 0.05)  # RDP tolerance in metres
-        self.declare_parameter('tf_poll_rate', 10.0)        # Hz — how often to check TF
 
-        self.map_frame = self.get_parameter('map_frame').value
-        self.robot_frame = self.get_parameter('robot_frame').value
+        self.odom_topic = self.get_parameter('odom_topic').value
         self.min_distance = self.get_parameter('min_distance').value
         self.output_dir = os.path.expanduser(
             self.get_parameter('output_dir').value
         )
         self.simplify_tolerance = self.get_parameter('simplify_tolerance').value
-        tf_poll_rate = self.get_parameter('tf_poll_rate').value
 
         # ---------- State ----------
         self.path_points = []   # list of (x, y) tuples
         self.last_x = None
         self.last_y = None
         self.recording = True
-        self._tf_available = False  # track whether we've seen TF yet
 
-        # ---------- TF Listener ----------
-        self.tf_buffer = Buffer()
-        self.tf_listener = TransformListener(self.tf_buffer, self)
-
-        # ---------- Timer (polls TF at tf_poll_rate Hz) ----------
-        timer_period = 1.0 / tf_poll_rate
-        self.tf_timer = self.create_timer(timer_period, self._tf_timer_callback)
+        # ---------- Subscriber ----------
+        self.odom_sub = self.create_subscription(
+            Odometry,
+            self.odom_topic,
+            self._odom_callback,
+            10,
+        )
 
         # ---------- Services ----------
         self.save_srv = self.create_service(
@@ -65,8 +58,7 @@ class BorderRecorderNode(Node):
 
         # ---------- Startup log ----------
         self.get_logger().info(
-            f'Border Recorder started — using TF: '
-            f'{self.map_frame} → {self.robot_frame} @ {tf_poll_rate} Hz'
+            f'Border Recorder started — listening on {self.odom_topic}'
         )
         self.get_logger().info(
             f'  min_distance={self.min_distance} m, '
@@ -80,37 +72,15 @@ class BorderRecorderNode(Node):
         )
 
     # ------------------------------------------------------------------ #
-    #  TF timer callback
+    #  Odometry callback
     # ------------------------------------------------------------------ #
-    def _tf_timer_callback(self):
-        """Poll TF for the robot position and record if moved far enough."""
+    def _odom_callback(self, msg: Odometry):
+        """Record the robot position if it moved far enough."""
         if not self.recording:
             return
 
-        try:
-            transform = self.tf_buffer.lookup_transform(
-                self.map_frame,
-                self.robot_frame,
-                rclpy.time.Time(),            # latest available
-                timeout=Duration(seconds=0.1),
-            )
-        except (LookupException, ConnectivityException, ExtrapolationException):
-            if not self._tf_available:
-                self.get_logger().info(
-                    f'Waiting for TF: {self.map_frame} → {self.robot_frame} '
-                    '(is SLAM running?)',
-                    throttle_duration_sec=5.0,
-                )
-            return
-
-        if not self._tf_available:
-            self._tf_available = True
-            self.get_logger().info(
-                f'TF available! Recording {self.map_frame} → {self.robot_frame}'
-            )
-
-        x = transform.transform.translation.x
-        y = transform.transform.translation.y
+        x = msg.pose.pose.position.x
+        y = msg.pose.pose.position.y
 
         if self.last_x is None:
             # First point — always record

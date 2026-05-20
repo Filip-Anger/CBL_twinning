@@ -32,12 +32,10 @@ def generate_launch_description():
         name='border_recorder_node',
         output='screen',
         parameters=[
-            {'map_frame': 'map'},
-            {'robot_frame': 'base_link'},
+            {'odom_topic': '/odom'},
             {'min_distance': 0.1},
             {'output_dir': '~/border_maps'},
             {'simplify_tolerance': 0.05},
-            {'tf_poll_rate': 10.0},
         ],
     )
 
