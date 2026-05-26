@@ -7,7 +7,6 @@ def generate_launch_description():
        Node(
            package='tb3_safety_stop',
            executable='twin_safety_node',
-        #    executable='twin_safety_node_back',
            output='screen',
            parameters=[
                {'real_scan_topic': '/scan'},
@@ -16,6 +15,7 @@ def generate_launch_description():
                {'real_cmd_topic': '/cmd_vel'},
                {'sim_cmd_topic': '/sim/cmd_vel'},
                {'stop_distance': 0.45},
+               {'stop_distance_back': 0.25},
            ]
        )
    ])
