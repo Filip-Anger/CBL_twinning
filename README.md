@@ -1,19 +1,3 @@
-Ah, I see exactly what you mean now! You want the raw Markdown code blocks *inside* a code block so you can copy the exact text formatting for just that specific snippet, without it rendering on the screen.
-
-Here is the exact Markdown code for your snippet:
-
-```text
-# Usage
-
-## Connect and Bring Up the Robot
-```bash
-ssh turtlebot@192.168.8.38
-ros2 launch bringup
-
-```
-
----
-
 ## How to Use Packages
 
 ### Safety Stop
