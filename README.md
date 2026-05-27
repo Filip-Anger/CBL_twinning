@@ -38,12 +38,8 @@ Connected to the robot, ready to drive
 ```bash
    ros2 launch border_recorder border_recorder.launch.py
 ```
-
-os2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
-
 2. **Call the /save_border service:**
 
 ```bash
    ros2 service call /save_border std_srvs/srv/Trigger
 ```
-
