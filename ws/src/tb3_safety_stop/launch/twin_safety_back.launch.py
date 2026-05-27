@@ -6,7 +6,7 @@ def generate_launch_description():
    return LaunchDescription([
        Node(
            package='tb3_safety_stop',
-           executable='twin_safety_node_back',
+           executable='twin_safety_node',
            output='screen',
            parameters=[
                {'real_scan_topic': '/scan'},
