@@ -1,0 +1,18 @@
+running develop
+running egg_info
+writing my_tb3_world.egg-info/PKG-INFO
+writing dependency_links to my_tb3_world.egg-info/dependency_links.txt
+writing entry points to my_tb3_world.egg-info/entry_points.txt
+writing requirements to my_tb3_world.egg-info/requires.txt
+writing top-level names to my_tb3_world.egg-info/top_level.txt
+reading manifest file 'my_tb3_world.egg-info/SOURCES.txt'
+writing manifest file 'my_tb3_world.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/falinux/CBL_twinning/ws/install/my_tb3_world/lib/python3.12/site-packages/my-tb3-world.egg-link (link to .)
+Installing publisher_node script to /home/falinux/CBL_twinning/ws/install/my_tb3_world/lib/my_tb3_world
+Installing subscriber_node script to /home/falinux/CBL_twinning/ws/install/my_tb3_world/lib/my_tb3_world
+
+Installed /home/falinux/CBL_twinning/ws/build/my_tb3_world
+running symlink_data
+symbolically linking /home/falinux/CBL_twinning/ws/build/my_tb3_world/resource/my_tb3_world -> /home/falinux/CBL_twinning/ws/install/my_tb3_world/share/ament_index/resource_index/packages
+error: [Errno 17] File exists: '/home/falinux/CBL_twinning/ws/build/my_tb3_world/resource/my_tb3_world' -> '/home/falinux/CBL_twinning/ws/install/my_tb3_world/share/ament_index/resource_index/packages/my_tb3_world'

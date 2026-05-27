@@ -1,4 +1,4 @@
 import sys
 if sys.prefix == '/usr':
     sys.real_prefix = sys.prefix
-    sys.prefix = sys.exec_prefix = '/home/falinux/team28/ws/install/tb3_safety_stop'
+    sys.prefix = sys.exec_prefix = '/home/falinux/CBL_twinning/ws/install/tb3_safety_stop'

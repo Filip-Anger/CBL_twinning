@@ -15,6 +15,7 @@ from rclpy.duration import Duration
 from std_srvs.srv import Trigger
 from tf2_ros import Buffer, TransformListener, LookupException
 from tf2_ros import ConnectivityException, ExtrapolationException
+from geometry_msgs.msg import PolygonStamped, Point32
 
 
 class BorderRecorderNode(Node):
@@ -46,6 +47,14 @@ class BorderRecorderNode(Node):
         self.last_y = None
         self.recording = True
         self._tf_available = False  # track whether we've seen TF yet
+
+        # ---------- Publishers for RViz ----------
+        self.polygon_pub = self.create_publisher(
+            PolygonStamped, 'recorded_border', 10
+        )
+        self.simplified_polygon_pub = self.create_publisher(
+            PolygonStamped, 'recorded_border_simplified', 10
+        )
 
         # ---------- TF Listener ----------
         self.tf_buffer = Buffer()
@@ -122,7 +131,7 @@ class BorderRecorderNode(Node):
             self._record_point(x, y)
 
     def _record_point(self, x: float, y: float):
-        """Append a point and log progress."""
+        """Append a point, log progress, and publish."""
         self.path_points.append((x, y))
         self.last_x = x
         self.last_y = y
@@ -130,6 +139,31 @@ class BorderRecorderNode(Node):
             self.get_logger().info(
                 f'Recorded {len(self.path_points)} border points'
             )
+        self._publish_polygon()
+
+    def _publish_polygon(self):
+        """Publish the current recorded path as a PolygonStamped message."""
+        if not self.path_points:
+            return
+        msg = PolygonStamped()
+        msg.header.frame_id = self.map_frame
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.polygon.points = [
+            Point32(x=float(pt[0]), y=float(pt[1]), z=0.0)
+            for pt in self.path_points
+        ]
+        self.polygon_pub.publish(msg)
+
+    def _publish_simplified_polygon(self, points):
+        """Publish the simplified and closed polygon."""
+        msg = PolygonStamped()
+        msg.header.frame_id = self.map_frame
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.polygon.points = [
+            Point32(x=float(pt[0]), y=float(pt[1]), z=0.0)
+            for pt in points
+        ]
+        self.simplified_polygon_pub.publish(msg)
 
     # ------------------------------------------------------------------ #
     #  /save_border service
@@ -171,9 +205,12 @@ class BorderRecorderNode(Node):
 
         # 5. Write CSV
         csv_path = os.path.join(
-            self.output_dir, f'border_polygon_{timestamp}.csv'
+            self.output_dir, 'border_polygon_new.csv'
         )
         self._write_csv(simplified, csv_path)
+
+        # 6. Publish simplified polygon for RViz visualization
+        self._publish_simplified_polygon(simplified)
 
         msg = (
             f'Saved border polygon: {n_raw} raw → '
@@ -195,6 +232,8 @@ class BorderRecorderNode(Node):
         self.path_points.clear()
         self.last_x = None
         self.last_y = None
+        # Publish empty polygon to clear visualizer
+        self._publish_polygon()
         msg = f'Cleared {n} recorded border points.'
         self.get_logger().info(msg)
         response.success = True

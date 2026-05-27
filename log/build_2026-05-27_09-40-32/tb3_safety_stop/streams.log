@@ -1,0 +1,45 @@
+[1.111s] Invoking command in '/home/falinux/CBL_twinning/ws/src/tb3_safety_stop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/tb3_safety_stop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/tb3_safety_stop build --build-base /home/falinux/CBL_twinning/build/tb3_safety_stop/build install --record /home/falinux/CBL_twinning/build/tb3_safety_stop/install.log --single-version-externally-managed install_data
+[1.465s] running egg_info
+[1.465s] creating ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info
+[1.481s] writing ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/PKG-INFO
+[1.481s] writing dependency_links to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/dependency_links.txt
+[1.481s] writing entry points to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/entry_points.txt
+[1.481s] writing requirements to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/requires.txt
+[1.481s] writing top-level names to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/top_level.txt
+[1.481s] writing manifest file '../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+[1.513s] reading manifest file '../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+[1.513s] writing manifest file '../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+[1.514s] running build
+[1.514s] running build_py
+[1.514s] creating /home/falinux/CBL_twinning/build/tb3_safety_stop/build
+[1.514s] creating /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib
+[1.514s] creating /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+[1.514s] copying tb3_safety_stop/__init__.py -> /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+[1.514s] copying tb3_safety_stop/twin_safety_node.py -> /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+[1.514s] copying tb3_safety_stop/twin_safety_node_ORIGINAL.py -> /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+[1.514s] running install
+[1.520s] running install_lib
+[1.537s] creating /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+[1.537s] copying /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop/__init__.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+[1.537s] copying /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop/twin_safety_node.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+[1.537s] copying /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop/twin_safety_node_ORIGINAL.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+[1.538s] byte-compiling /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/__init__.py to __init__.cpython-312.pyc
+[1.538s] byte-compiling /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/twin_safety_node.py to twin_safety_node.cpython-312.pyc
+[1.539s] byte-compiling /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/twin_safety_node_ORIGINAL.py to twin_safety_node_ORIGINAL.cpython-312.pyc
+[1.540s] running install_data
+[1.540s] creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index
+[1.540s] creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index/resource_index
+[1.541s] creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index/resource_index/packages
+[1.541s] copying resource/tb3_safety_stop -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index/resource_index/packages
+[1.541s] copying package.xml -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop
+[1.541s] creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/launch
+[1.542s] copying launch/twin_safety.launch.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/launch
+[1.542s] copying launch/gazebo_twin.launch.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/launch
+[1.542s] running install_egg_info
+[1.559s] Copying ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop-0.0.1-py3.12.egg-info
+[1.559s] running install_scripts
+[1.669s] Installing safety_stop_node script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+[1.669s] Installing twin_safety_node script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+[1.669s] Installing twin_safety_node_back script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+[1.669s] writing list of installed files to '/home/falinux/CBL_twinning/build/tb3_safety_stop/install.log'
+[1.695s] Invoked command in '/home/falinux/CBL_twinning/ws/src/tb3_safety_stop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/tb3_safety_stop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/tb3_safety_stop build --build-base /home/falinux/CBL_twinning/build/tb3_safety_stop/build install --record /home/falinux/CBL_twinning/build/tb3_safety_stop/install.log --single-version-externally-managed install_data

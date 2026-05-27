@@ -14,12 +14,8 @@ launch/subscriber_node.launch.py
 my_tb3_world/__init__.py
 my_tb3_world/publisher_node.py
 my_tb3_world/subscriber_node.py
-my_tb3_world.egg-info/PKG-INFO
-my_tb3_world.egg-info/SOURCES.txt
-my_tb3_world.egg-info/dependency_links.txt
-my_tb3_world.egg-info/entry_points.txt
-my_tb3_world.egg-info/requires.txt
-my_tb3_world.egg-info/top_level.txt
-my_tb3_world.egg-info/zip-safe
 resource/my_tb3_world
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
 worlds/new_world.world

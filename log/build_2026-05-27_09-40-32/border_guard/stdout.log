@@ -1,0 +1,37 @@
+running egg_info
+creating ../../../build/border_guard/border_guard.egg-info
+writing ../../../build/border_guard/border_guard.egg-info/PKG-INFO
+writing dependency_links to ../../../build/border_guard/border_guard.egg-info/dependency_links.txt
+writing entry points to ../../../build/border_guard/border_guard.egg-info/entry_points.txt
+writing requirements to ../../../build/border_guard/border_guard.egg-info/requires.txt
+writing top-level names to ../../../build/border_guard/border_guard.egg-info/top_level.txt
+writing manifest file '../../../build/border_guard/border_guard.egg-info/SOURCES.txt'
+reading manifest file '../../../build/border_guard/border_guard.egg-info/SOURCES.txt'
+writing manifest file '../../../build/border_guard/border_guard.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/falinux/CBL_twinning/build/border_guard/build
+creating /home/falinux/CBL_twinning/build/border_guard/build/lib
+creating /home/falinux/CBL_twinning/build/border_guard/build/lib/border_guard
+copying border_guard/__init__.py -> /home/falinux/CBL_twinning/build/border_guard/build/lib/border_guard
+copying border_guard/border_guard_node.py -> /home/falinux/CBL_twinning/build/border_guard/build/lib/border_guard
+running install
+running install_lib
+creating /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard
+copying /home/falinux/CBL_twinning/build/border_guard/build/lib/border_guard/__init__.py -> /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard
+copying /home/falinux/CBL_twinning/build/border_guard/build/lib/border_guard/border_guard_node.py -> /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard
+byte-compiling /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard/border_guard_node.py to border_guard_node.cpython-312.pyc
+running install_data
+creating /home/falinux/CBL_twinning/install/border_guard/share/ament_index
+creating /home/falinux/CBL_twinning/install/border_guard/share/ament_index/resource_index
+creating /home/falinux/CBL_twinning/install/border_guard/share/ament_index/resource_index/packages
+copying resource/border_guard -> /home/falinux/CBL_twinning/install/border_guard/share/ament_index/resource_index/packages
+copying package.xml -> /home/falinux/CBL_twinning/install/border_guard/share/border_guard
+creating /home/falinux/CBL_twinning/install/border_guard/share/border_guard/launch
+copying launch/border_guard.launch.py -> /home/falinux/CBL_twinning/install/border_guard/share/border_guard/launch
+running install_egg_info
+Copying ../../../build/border_guard/border_guard.egg-info to /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard-0.1.0-py3.12.egg-info
+running install_scripts
+Installing border_guard_node script to /home/falinux/CBL_twinning/install/border_guard/lib/border_guard
+writing list of installed files to '/home/falinux/CBL_twinning/build/border_guard/install.log'

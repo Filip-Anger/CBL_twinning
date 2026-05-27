@@ -1,0 +1,2 @@
+[console_scripts]
+border_recorder_node = border_recorder.border_recorder_node:main

@@ -1,0 +1,18 @@
+running develop
+running egg_info
+writing border_recorder.egg-info/PKG-INFO
+writing dependency_links to border_recorder.egg-info/dependency_links.txt
+writing entry points to border_recorder.egg-info/entry_points.txt
+writing requirements to border_recorder.egg-info/requires.txt
+writing top-level names to border_recorder.egg-info/top_level.txt
+reading manifest file 'border_recorder.egg-info/SOURCES.txt'
+writing manifest file 'border_recorder.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/falinux/CBL_twinning/ws/install/border_recorder/lib/python3.12/site-packages/border-recorder.egg-link (link to .)
+Installing border_recorder_node script to /home/falinux/CBL_twinning/ws/install/border_recorder/lib/border_recorder
+
+Installed /home/falinux/CBL_twinning/ws/build/border_recorder
+running symlink_data
+symbolically linking /home/falinux/CBL_twinning/ws/build/border_recorder/resource/border_recorder -> /home/falinux/CBL_twinning/ws/install/border_recorder/share/ament_index/resource_index/packages
+symbolically linking /home/falinux/CBL_twinning/ws/build/border_recorder/package.xml -> /home/falinux/CBL_twinning/ws/install/border_recorder/share/border_recorder
+symbolically linking /home/falinux/CBL_twinning/ws/build/border_recorder/launch/border_recorder.launch.py -> /home/falinux/CBL_twinning/ws/install/border_recorder/share/border_recorder/launch

@@ -1,0 +1,30 @@
+running develop
+Removing /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3-safety-stop.egg-link (link to .)
+running egg_info
+writing ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/PKG-INFO
+writing dependency_links to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/dependency_links.txt
+writing entry points to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/entry_points.txt
+writing requirements to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/requires.txt
+writing top-level names to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/top_level.txt
+reading manifest file '../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+writing manifest file '../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build
+creating /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib
+creating /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop
+copying tb3_safety_stop/__init__.py -> /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop
+copying tb3_safety_stop/twin_safety_node.py -> /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop
+copying tb3_safety_stop/twin_safety_node_ORIGINAL.py -> /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop
+running install
+running install_lib
+creating /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+copying /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop/__init__.py -> /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+copying /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop/twin_safety_node.py -> /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+copying /home/falinux/CBL_twinning/ws/build/tb3_safety_stop/build/lib/tb3_safety_stop/twin_safety_node_ORIGINAL.py -> /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+byte-compiling /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/twin_safety_node.py to twin_safety_node.cpython-312.pyc
+byte-compiling /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/twin_safety_node_ORIGINAL.py to twin_safety_node_ORIGINAL.cpython-312.pyc
+running install_data
+error: could not create '/home/falinux/CBL_twinning/ws/install/tb3_safety_stop/share/ament_index/resource_index/packages/tb3_safety_stop': No such file or directory
+copying resource/tb3_safety_stop -> /home/falinux/CBL_twinning/ws/install/tb3_safety_stop/share/ament_index/resource_index/packages

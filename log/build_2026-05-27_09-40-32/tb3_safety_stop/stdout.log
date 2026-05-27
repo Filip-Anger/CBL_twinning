@@ -1,0 +1,43 @@
+running egg_info
+creating ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info
+writing ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/PKG-INFO
+writing dependency_links to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/dependency_links.txt
+writing entry points to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/entry_points.txt
+writing requirements to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/requires.txt
+writing top-level names to ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/top_level.txt
+writing manifest file '../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+reading manifest file '../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+writing manifest file '../../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/falinux/CBL_twinning/build/tb3_safety_stop/build
+creating /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib
+creating /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+copying tb3_safety_stop/__init__.py -> /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+copying tb3_safety_stop/twin_safety_node.py -> /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+copying tb3_safety_stop/twin_safety_node_ORIGINAL.py -> /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop
+running install
+running install_lib
+creating /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+copying /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop/__init__.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+copying /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop/twin_safety_node.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+copying /home/falinux/CBL_twinning/build/tb3_safety_stop/build/lib/tb3_safety_stop/twin_safety_node_ORIGINAL.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop
+byte-compiling /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/twin_safety_node.py to twin_safety_node.cpython-312.pyc
+byte-compiling /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop/twin_safety_node_ORIGINAL.py to twin_safety_node_ORIGINAL.cpython-312.pyc
+running install_data
+creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index
+creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index/resource_index
+creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index/resource_index/packages
+copying resource/tb3_safety_stop -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/ament_index/resource_index/packages
+copying package.xml -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop
+creating /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/launch
+copying launch/twin_safety.launch.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/launch
+copying launch/gazebo_twin.launch.py -> /home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/launch
+running install_egg_info
+Copying ../../../build/tb3_safety_stop/tb3_safety_stop.egg-info to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop-0.0.1-py3.12.egg-info
+running install_scripts
+Installing safety_stop_node script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+Installing twin_safety_node script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+Installing twin_safety_node_back script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+writing list of installed files to '/home/falinux/CBL_twinning/build/tb3_safety_stop/install.log'
