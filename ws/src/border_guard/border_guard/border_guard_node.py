@@ -13,10 +13,10 @@ from rclpy.node import Node
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import TwistStamped, PolygonStamped, Point32
 
-# REBUILD UDING SLAM
+# TODO: REBUILD UDING SLAM
 
 class BorderGuardNode(Node):
-    """ROS2 node that enforces a polygon geofence using SLAM localization."""
+    """ROS2 node that enforces a polygon geofence using odom TODO: SLAM localization."""
 
     def __init__(self):
         super().__init__('border_guard_node')
