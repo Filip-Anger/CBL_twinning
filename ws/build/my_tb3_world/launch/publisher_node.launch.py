@@ -1,1 +1,0 @@
-/home/falinux/CBL_twinning/ws/src/my_tb3_world/launch/publisher_node.launch.py

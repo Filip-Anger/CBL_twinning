@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: border-guard
-Version: 0.1.0
-Summary: Geofence enforcement — blocks robot movement outside a recorded polygon
-Maintainer: falinux
-Maintainer-email: filip.anger@gmail.com
-License: Apache-2.0

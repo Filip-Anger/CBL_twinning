@@ -1,4 +1,0 @@
-Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
-Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/falinux/team28/ws/build/my_tb3_world -- -j8 -l8
-Invoking command in '/home/falinux/team28/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/falinux/team28/ws/build/my_tb3_world
-Invoked command in '/home/falinux/team28/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/falinux/team28/ws/build/my_tb3_world

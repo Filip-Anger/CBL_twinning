@@ -1,4 +1,0 @@
-[console_scripts]
-safety_stop_node = tb3_safety_stop.safety_stop_node:main
-twin_safety_node = tb3_safety_stop.twin_safety_node:main
-twin_safety_node_back = tb3_safety_stop_back.twin_safety_node_back:main

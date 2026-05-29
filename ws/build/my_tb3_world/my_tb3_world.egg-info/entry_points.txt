@@ -1,3 +1,0 @@
-[console_scripts]
-publisher_node = my_tb3_world.publisher_node:main
-subscriber_node = my_tb3_world.subscriber_node:main

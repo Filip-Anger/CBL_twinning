@@ -1,1 +1,0 @@
-/home/falinux/CBL_twinning/ws/src/tb3_safety_stop/launch/gazebo_twin.launch.py

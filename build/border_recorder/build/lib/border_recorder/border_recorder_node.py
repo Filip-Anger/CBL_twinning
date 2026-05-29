@@ -205,7 +205,7 @@ class BorderRecorderNode(Node):
 
         # 5. Write CSV
         csv_path = os.path.join(
-            self.output_dir, f'border_polygon_{timestamp}.csv'
+            self.output_dir, 'border_polygon_new.csv'
         )
         self._write_csv(simplified, csv_path)
 

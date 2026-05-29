@@ -13,15 +13,16 @@ from rclpy.node import Node
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import TwistStamped, PolygonStamped, Point32
 
+# TODO: REBUILD UDING SLAM
 
 class BorderGuardNode(Node):
-    """ROS2 node that enforces a polygon geofence on robot movement."""
+    """ROS2 node that enforces a polygon geofence using odom TODO: SLAM localization."""
 
     def __init__(self):
         super().__init__('border_guard_node')
 
         # ---------- Parameters ----------
-        self.declare_parameter('polygon_file', '~/border_maps/border_polygon.csv')
+        self.declare_parameter('polygon_file', '~/border_maps/border_polygon_new.csv')
         self.declare_parameter('odom_topic', '/odom')
         self.declare_parameter('input_cmd_topic', '/cmd_vel_raw')
         self.declare_parameter('output_cmd_topic', '/cmd_vel')
