@@ -1,0 +1,2 @@
+[console_scripts]
+forward_sound = robot_sound_demo.forward_sound:main

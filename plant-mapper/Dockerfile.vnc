@@ -1,0 +1,51 @@
+# GUI/VNC wrapper image built on top of the base TurtleBot3 image
+FROM turtlebot3_ws:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# -----------------------------------------------------------------------------
+# Install a minimal VNC/X11 environment so GUI tools can be accessed from macOS
+# through RealVNC Viewer.
+# -----------------------------------------------------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    xterm \
+    xauth \
+    x11-xserver-utils \
+    dbus-x11 \
+    tigervnc-standalone-server \
+    tigervnc-common \
+    tigervnc-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+# -----------------------------------------------------------------------------
+# Create the TigerVNC startup script.
+# The VNC desktop will open an xterm terminal on startup.
+# -----------------------------------------------------------------------------
+RUN mkdir -p /root/.vnc && \
+    printf "#!/bin/sh\nexec xterm\n" > /root/.vnc/xstartup && \
+    chmod +x /root/.vnc/xstartup
+
+# Force software rendering to reduce GPU/OpenGL issues inside the container
+RUN echo "export LIBGL_ALWAYS_SOFTWARE=1" >> /root/.bashrc
+
+# Default VNC settings
+ENV DISPLAY=:1
+ENV VNC_PORT=5901
+ENV VNC_RESOLUTION=1600x900
+ENV VNC_COL_DEPTH=24
+
+# -----------------------------------------------------------------------------
+# On container startup:
+# 1. create ~/.vnc if missing
+# 2. create a VNC password file if missing (password = ros)
+# 3. start the VNC server
+# 4. keep the container alive by following the VNC logs
+# -----------------------------------------------------------------------------
+CMD bash -lc '\
+  mkdir -p $HOME/.vnc; \
+  if [ ! -f "$HOME/.vnc/passwd" ]; then \
+    echo "ros" | vncpasswd -f > $HOME/.vnc/passwd; \
+  fi; \
+  chmod 600 $HOME/.vnc/passwd; \
+  vncserver :1 -geometry ${VNC_RESOLUTION} -depth ${VNC_COL_DEPTH} -localhost no -rfbport ${VNC_PORT}; \
+  tail -f $HOME/.vnc/*.log'

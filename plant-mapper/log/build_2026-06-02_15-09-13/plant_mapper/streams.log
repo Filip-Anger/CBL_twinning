@@ -1,0 +1,37 @@
+[0.725s] Invoking command in '/ws/src/plant_mapper': PYTHONPATH=/ws/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ws/install/plant_mapper/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plant_mapper build --build-base /ws/build/plant_mapper/build install --record /ws/build/plant_mapper/install.log --single-version-externally-managed install_data
+[0.886s] running egg_info
+[0.887s] creating ../../build/plant_mapper/plant_mapper.egg-info
+[0.893s] writing ../../build/plant_mapper/plant_mapper.egg-info/PKG-INFO
+[0.894s] writing dependency_links to ../../build/plant_mapper/plant_mapper.egg-info/dependency_links.txt
+[0.895s] writing entry points to ../../build/plant_mapper/plant_mapper.egg-info/entry_points.txt
+[0.895s] writing requirements to ../../build/plant_mapper/plant_mapper.egg-info/requires.txt
+[0.896s] writing top-level names to ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
+[0.896s] writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+[0.911s] reading manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+[0.912s] writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+[0.912s] running build
+[0.913s] running build_py
+[0.914s] creating /ws/build/plant_mapper/build
+[0.914s] creating /ws/build/plant_mapper/build/lib
+[0.914s] creating /ws/build/plant_mapper/build/lib/plant_mapper
+[0.915s] copying plant_mapper/__init__.py -> /ws/build/plant_mapper/build/lib/plant_mapper
+[0.915s] copying plant_mapper/plant_mapper.py -> /ws/build/plant_mapper/build/lib/plant_mapper
+[0.918s] running install
+[0.921s] running install_lib
+[0.937s] creating /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+[0.937s] copying /ws/build/plant_mapper/build/lib/plant_mapper/__init__.py -> /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+[0.939s] copying /ws/build/plant_mapper/build/lib/plant_mapper/plant_mapper.py -> /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+[0.940s] byte-compiling /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__init__.py to __init__.cpython-312.pyc
+[0.942s] byte-compiling /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/plant_mapper.py to plant_mapper.cpython-312.pyc
+[0.943s] running install_data
+[0.943s] creating /ws/install/plant_mapper/share/ament_index
+[0.943s] creating /ws/install/plant_mapper/share/ament_index/resource_index
+[0.944s] creating /ws/install/plant_mapper/share/ament_index/resource_index/packages
+[0.944s] copying resource/plant_mapper -> /ws/install/plant_mapper/share/ament_index/resource_index/packages
+[0.944s] copying package.xml -> /ws/install/plant_mapper/share/plant_mapper
+[0.944s] running install_egg_info
+[0.958s] Copying ../../build/plant_mapper/plant_mapper.egg-info to /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info
+[0.963s] running install_scripts
+[1.039s] Installing plant_mapper script to /ws/install/plant_mapper/lib/plant_mapper
+[1.040s] writing list of installed files to '/ws/build/plant_mapper/install.log'
+[1.059s] Invoked command in '/ws/src/plant_mapper' returned '0': PYTHONPATH=/ws/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ws/install/plant_mapper/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plant_mapper build --build-base /ws/build/plant_mapper/build install --record /ws/build/plant_mapper/install.log --single-version-externally-managed install_data
