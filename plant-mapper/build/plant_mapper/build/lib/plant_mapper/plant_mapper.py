@@ -19,7 +19,7 @@ class PlantMapper(Node):
         # Publisher
         self.cmd_pub = self.create_publisher(
             TwistStamped,
-            '/cmd_vel',
+            '/cmd_vel_raw',
             10
         )
 
