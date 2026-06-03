@@ -1,0 +1,23 @@
+[2.118s] Invoking command in '/home/falinux/CBL_twinning/src/tb3_safety_stop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/tb3_safety_stop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tb3_safety_stop build --build-base /home/falinux/CBL_twinning/build/tb3_safety_stop/build install --record /home/falinux/CBL_twinning/build/tb3_safety_stop/install.log --single-version-externally-managed install_data
+[2.411s] running egg_info
+[2.436s] writing ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/PKG-INFO
+[2.436s] writing dependency_links to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/dependency_links.txt
+[2.436s] writing entry points to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/entry_points.txt
+[2.437s] writing requirements to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/requires.txt
+[2.437s] writing top-level names to ../../build/tb3_safety_stop/tb3_safety_stop.egg-info/top_level.txt
+[2.494s] reading manifest file '../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+[2.496s] writing manifest file '../../build/tb3_safety_stop/tb3_safety_stop.egg-info/SOURCES.txt'
+[2.496s] running build
+[2.496s] running build_py
+[2.496s] running install
+[2.509s] running install_lib
+[2.539s] running install_data
+[2.539s] running install_egg_info
+[2.567s] removing '/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop-0.0.1-py3.12.egg-info' (and everything under it)
+[2.568s] Copying ../../build/tb3_safety_stop/tb3_safety_stop.egg-info to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages/tb3_safety_stop-0.0.1-py3.12.egg-info
+[2.569s] running install_scripts
+[2.721s] Installing safety_stop_node script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+[2.721s] Installing twin_safety_node script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+[2.721s] Installing twin_safety_node_back script to /home/falinux/CBL_twinning/install/tb3_safety_stop/lib/tb3_safety_stop
+[2.721s] writing list of installed files to '/home/falinux/CBL_twinning/build/tb3_safety_stop/install.log'
+[2.753s] Invoked command in '/home/falinux/CBL_twinning/src/tb3_safety_stop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/tb3_safety_stop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tb3_safety_stop build --build-base /home/falinux/CBL_twinning/build/tb3_safety_stop/build install --record /home/falinux/CBL_twinning/build/tb3_safety_stop/install.log --single-version-externally-managed install_data

@@ -1,0 +1,42 @@
+[2.406s] Invoking command in '/home/falinux/CBL_twinning/src/turtlebot3_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/turtlebot3_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot3_teleop build --build-base /home/falinux/CBL_twinning/build/turtlebot3_teleop/build install --record /home/falinux/CBL_twinning/build/turtlebot3_teleop/install.log --single-version-externally-managed install_data
+[2.684s] running egg_info
+[2.684s] creating ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info
+[2.705s] writing ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/PKG-INFO
+[2.705s] writing dependency_links to ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/dependency_links.txt
+[2.705s] writing entry points to ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/entry_points.txt
+[2.706s] writing requirements to ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/requires.txt
+[2.706s] writing top-level names to ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/top_level.txt
+[2.706s] writing manifest file '../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/SOURCES.txt'
+[2.746s] reading manifest file '../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/SOURCES.txt'
+[2.747s] writing manifest file '../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info/SOURCES.txt'
+[2.747s] running build
+[2.748s] running build_py
+[2.748s] creating /home/falinux/CBL_twinning/build/turtlebot3_teleop/build
+[2.748s] creating /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib
+[2.748s] creating /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop
+[2.748s] copying turtlebot3_teleop/__init__.py -> /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop
+[2.749s] creating /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script
+[2.749s] copying turtlebot3_teleop/script/__init__.py -> /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script
+[2.749s] copying turtlebot3_teleop/script/teleop_keyboard.py -> /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script
+[2.749s] running install
+[2.756s] running install_lib
+[2.776s] creating /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop
+[2.776s] copying /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/__init__.py -> /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop
+[2.777s] creating /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop/script
+[2.777s] copying /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script/__init__.py -> /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop/script
+[2.777s] copying /home/falinux/CBL_twinning/build/turtlebot3_teleop/build/lib/turtlebot3_teleop/script/teleop_keyboard.py -> /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop/script
+[2.777s] byte-compiling /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop/__init__.py to __init__.cpython-312.pyc
+[2.778s] byte-compiling /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop/script/__init__.py to __init__.cpython-312.pyc
+[2.778s] byte-compiling /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop/script/teleop_keyboard.py to teleop_keyboard.cpython-312.pyc
+[2.780s] running install_data
+[2.780s] creating /home/falinux/CBL_twinning/install/turtlebot3_teleop/share/ament_index
+[2.780s] creating /home/falinux/CBL_twinning/install/turtlebot3_teleop/share/ament_index/resource_index
+[2.780s] creating /home/falinux/CBL_twinning/install/turtlebot3_teleop/share/ament_index/resource_index/packages
+[2.780s] copying resource/turtlebot3_teleop -> /home/falinux/CBL_twinning/install/turtlebot3_teleop/share/ament_index/resource_index/packages
+[2.781s] copying package.xml -> /home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop
+[2.781s] running install_egg_info
+[2.816s] Copying ../../build/turtlebot3_teleop/turtlebot3_teleop.egg-info to /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages/turtlebot3_teleop-2.3.6-py3.12.egg-info
+[2.817s] running install_scripts
+[2.996s] Installing teleop_keyboard script to /home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/turtlebot3_teleop
+[2.996s] writing list of installed files to '/home/falinux/CBL_twinning/build/turtlebot3_teleop/install.log'
+[3.031s] Invoked command in '/home/falinux/CBL_twinning/src/turtlebot3_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/turtlebot3_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot3_teleop build --build-base /home/falinux/CBL_twinning/build/turtlebot3_teleop/build install --record /home/falinux/CBL_twinning/build/turtlebot3_teleop/install.log --single-version-externally-managed install_data
