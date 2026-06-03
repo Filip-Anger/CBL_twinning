@@ -54,13 +54,15 @@ class PlantMapper(Node):
             "e = export plants\n"
             "q = quit\n"
         )
-
+    
+        # Separate thread for keyboard
         self.keyboard_thread = threading.Thread(
             target=self.keyboard_listener,
             daemon=True
         )
         self.keyboard_thread.start()
 
+    # Extract position.
     def odom_callback(self, msg):
 
         pose = msg.pose.pose
@@ -73,6 +75,7 @@ class PlantMapper(Node):
         self.current_qz = pose.orientation.z
         self.current_qw = pose.orientation.w
 
+    # Movement control.
     def publish_velocity(self, linear_x, angular_z):
 
         msg = TwistStamped()
@@ -131,16 +134,16 @@ class PlantMapper(Node):
                 key = sys.stdin.read(1)
 
                 if key == 'w':
-                    self.publish_velocity(0.2, 0.0)
+                    self.publish_velocity(0.08, 0.0)
 
                 elif key == 's':
-                    self.publish_velocity(-0.2, 0.0)
+                    self.publish_velocity(-0.08, 0.0)
 
                 elif key == 'a':
-                    self.publish_velocity(0.0, 0.8)
+                    self.publish_velocity(0.0, 0.3)
 
                 elif key == 'd':
-                    self.publish_velocity(0.0, -0.8)
+                    self.publish_velocity(0.0, -0.3)
 
                 elif key == 'x':
                     self.stop_robot()
