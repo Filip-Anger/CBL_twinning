@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/robot_sound_demo/robot_sound_demo.egg-info
+writing ../../build/robot_sound_demo/robot_sound_demo.egg-info/PKG-INFO
+writing dependency_links to ../../build/robot_sound_demo/robot_sound_demo.egg-info/dependency_links.txt
+writing entry points to ../../build/robot_sound_demo/robot_sound_demo.egg-info/entry_points.txt
+writing requirements to ../../build/robot_sound_demo/robot_sound_demo.egg-info/requires.txt
+writing top-level names to ../../build/robot_sound_demo/robot_sound_demo.egg-info/top_level.txt
+writing manifest file '../../build/robot_sound_demo/robot_sound_demo.egg-info/SOURCES.txt'
+reading manifest file '../../build/robot_sound_demo/robot_sound_demo.egg-info/SOURCES.txt'
+writing manifest file '../../build/robot_sound_demo/robot_sound_demo.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /ws/build/robot_sound_demo/build
+creating /ws/build/robot_sound_demo/build/lib
+creating /ws/build/robot_sound_demo/build/lib/robot_sound_demo
+copying robot_sound_demo/forward_sound.py -> /ws/build/robot_sound_demo/build/lib/robot_sound_demo
+copying robot_sound_demo/__init__.py -> /ws/build/robot_sound_demo/build/lib/robot_sound_demo
+running install
+running install_lib
+creating /ws/install/robot_sound_demo/lib/python3.12/site-packages/robot_sound_demo
+copying /ws/build/robot_sound_demo/build/lib/robot_sound_demo/forward_sound.py -> /ws/install/robot_sound_demo/lib/python3.12/site-packages/robot_sound_demo
+copying /ws/build/robot_sound_demo/build/lib/robot_sound_demo/__init__.py -> /ws/install/robot_sound_demo/lib/python3.12/site-packages/robot_sound_demo
+byte-compiling /ws/install/robot_sound_demo/lib/python3.12/site-packages/robot_sound_demo/forward_sound.py to forward_sound.cpython-312.pyc
+byte-compiling /ws/install/robot_sound_demo/lib/python3.12/site-packages/robot_sound_demo/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /ws/install/robot_sound_demo/share/ament_index
+creating /ws/install/robot_sound_demo/share/ament_index/resource_index
+creating /ws/install/robot_sound_demo/share/ament_index/resource_index/packages
+copying resource/robot_sound_demo -> /ws/install/robot_sound_demo/share/ament_index/resource_index/packages
+copying package.xml -> /ws/install/robot_sound_demo/share/robot_sound_demo
+running install_egg_info
+Copying ../../build/robot_sound_demo/robot_sound_demo.egg-info to /ws/install/robot_sound_demo/lib/python3.12/site-packages/robot_sound_demo-0.0.0-py3.12.egg-info
+running install_scripts
+Installing forward_sound script to /ws/install/robot_sound_demo/lib/robot_sound_demo
+writing list of installed files to '/ws/build/robot_sound_demo/install.log'

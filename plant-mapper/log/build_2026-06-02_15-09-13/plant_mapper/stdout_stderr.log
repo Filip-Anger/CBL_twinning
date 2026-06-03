@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/plant_mapper/plant_mapper.egg-info
+writing ../../build/plant_mapper/plant_mapper.egg-info/PKG-INFO
+writing dependency_links to ../../build/plant_mapper/plant_mapper.egg-info/dependency_links.txt
+writing entry points to ../../build/plant_mapper/plant_mapper.egg-info/entry_points.txt
+writing requirements to ../../build/plant_mapper/plant_mapper.egg-info/requires.txt
+writing top-level names to ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
+writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+reading manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /ws/build/plant_mapper/build
+creating /ws/build/plant_mapper/build/lib
+creating /ws/build/plant_mapper/build/lib/plant_mapper
+copying plant_mapper/__init__.py -> /ws/build/plant_mapper/build/lib/plant_mapper
+copying plant_mapper/plant_mapper.py -> /ws/build/plant_mapper/build/lib/plant_mapper
+running install
+running install_lib
+creating /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+copying /ws/build/plant_mapper/build/lib/plant_mapper/__init__.py -> /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+copying /ws/build/plant_mapper/build/lib/plant_mapper/plant_mapper.py -> /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+byte-compiling /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__init__.py to __init__.cpython-312.pyc
+byte-compiling /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/plant_mapper.py to plant_mapper.cpython-312.pyc
+running install_data
+creating /ws/install/plant_mapper/share/ament_index
+creating /ws/install/plant_mapper/share/ament_index/resource_index
+creating /ws/install/plant_mapper/share/ament_index/resource_index/packages
+copying resource/plant_mapper -> /ws/install/plant_mapper/share/ament_index/resource_index/packages
+copying package.xml -> /ws/install/plant_mapper/share/plant_mapper
+running install_egg_info
+Copying ../../build/plant_mapper/plant_mapper.egg-info to /ws/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info
+running install_scripts
+Installing plant_mapper script to /ws/install/plant_mapper/lib/plant_mapper
+writing list of installed files to '/ws/build/plant_mapper/install.log'
