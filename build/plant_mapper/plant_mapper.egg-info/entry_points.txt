@@ -1,2 +1,4 @@
 [console_scripts]
+farm_navigator = plant_mapper.farm_navigator:main
+farm_twin = plant_mapper.farm_twin:main
 plant_mapper = plant_mapper.plant_mapper:main

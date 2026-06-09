@@ -1,0 +1,353 @@
+[0.125s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.125s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7afc39c06600>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7afc39c06450>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7afc39c06450>>)
+[0.178s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.179s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.179s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.179s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.179s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.179s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.179s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/falinux/CBL_twinning'
+[0.179s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.179s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.179s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extensions ['ignore', 'ignore_ament_install']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extension 'colcon_pkg'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extensions ['colcon_meta']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extension 'colcon_meta'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extensions ['ros']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_guard) by extension 'ros'
+[0.219s] DEBUG:colcon.colcon_core.package_identification:Package 'src/border_guard' with type 'ros.ament_python' and name 'border_guard'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extensions ['ignore', 'ignore_ament_install']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extension 'ignore'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extension 'ignore_ament_install'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extensions ['colcon_pkg']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extension 'colcon_pkg'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extensions ['colcon_meta']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extension 'colcon_meta'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extensions ['ros']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/border_recorder) by extension 'ros'
+[0.220s] DEBUG:colcon.colcon_core.package_identification:Package 'src/border_recorder' with type 'ros.ament_python' and name 'border_recorder'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extensions ['ignore', 'ignore_ament_install']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'ignore'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'ignore_ament_install'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extensions ['colcon_pkg']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'colcon_pkg'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extensions ['colcon_meta']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'colcon_meta'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extensions ['ros']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'ros'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extensions ['cmake', 'python']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'cmake'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'python'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extensions ['python_setup_py']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(src/mapFiles) by extension 'python_setup_py'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extensions ['ignore', 'ignore_ament_install']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extension 'ignore'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extension 'ignore_ament_install'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extensions ['colcon_pkg']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extension 'colcon_pkg'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extensions ['colcon_meta']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extension 'colcon_meta'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extensions ['ros']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_tb3_world) by extension 'ros'
+[0.221s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_tb3_world' with type 'ros.ament_python' and name 'my_tb3_world'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extensions ['ignore', 'ignore_ament_install']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extension 'ignore'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extension 'ignore_ament_install'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extensions ['colcon_pkg']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extension 'colcon_pkg'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extensions ['colcon_meta']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extension 'colcon_meta'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extensions ['ros']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(src/plant_mapper) by extension 'ros'
+[0.223s] DEBUG:colcon.colcon_core.package_identification:Package 'src/plant_mapper' with type 'ros.ament_python' and name 'plant_mapper'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extensions ['ignore', 'ignore_ament_install']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extension 'ignore'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extension 'ignore_ament_install'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extensions ['colcon_pkg']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extension 'colcon_pkg'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extensions ['colcon_meta']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extension 'colcon_meta'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extensions ['ros']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(src/tb3_safety_stop) by extension 'ros'
+[0.224s] DEBUG:colcon.colcon_core.package_identification:Package 'src/tb3_safety_stop' with type 'ros.ament_python' and name 'tb3_safety_stop'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extensions ['ignore', 'ignore_ament_install']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extension 'ignore'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extension 'ignore_ament_install'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extensions ['colcon_pkg']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extension 'colcon_pkg'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extensions ['colcon_meta']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extension 'colcon_meta'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extensions ['ros']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot3_teleop) by extension 'ros'
+[0.224s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot3_teleop' with type 'ros.ament_python' and name 'turtlebot3_teleop'
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.225s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'cmake_args' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'cmake_target' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'cmake_clean_cache' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'cmake_clean_first' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'cmake_force_configure' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'ament_cmake_args' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'catkin_cmake_args' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_guard' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.251s] DEBUG:colcon.colcon_core.verb:Building package 'border_guard' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/falinux/CBL_twinning/build/border_guard', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/falinux/CBL_twinning/install/border_guard', 'merge_install': False, 'path': '/home/falinux/CBL_twinning/src/border_guard', 'symlink_install': False, 'test_result_base': None}
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'cmake_args' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'cmake_target' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'cmake_clean_cache' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'cmake_clean_first' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'cmake_force_configure' from command line to 'False'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'ament_cmake_args' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'catkin_cmake_args' from command line to 'None'
+[0.251s] Level 5:colcon.colcon_core.verb:set package 'border_recorder' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.251s] DEBUG:colcon.colcon_core.verb:Building package 'border_recorder' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/falinux/CBL_twinning/build/border_recorder', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/falinux/CBL_twinning/install/border_recorder', 'merge_install': False, 'path': '/home/falinux/CBL_twinning/src/border_recorder', 'symlink_install': False, 'test_result_base': None}
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'cmake_args' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'cmake_target' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'cmake_clean_cache' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'cmake_clean_first' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'cmake_force_configure' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'ament_cmake_args' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'catkin_cmake_args' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'my_tb3_world' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.252s] DEBUG:colcon.colcon_core.verb:Building package 'my_tb3_world' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/falinux/CBL_twinning/build/my_tb3_world', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/falinux/CBL_twinning/install/my_tb3_world', 'merge_install': False, 'path': '/home/falinux/CBL_twinning/src/my_tb3_world', 'symlink_install': False, 'test_result_base': None}
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'cmake_args' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'cmake_target' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'cmake_clean_cache' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'cmake_clean_first' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'cmake_force_configure' from command line to 'False'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'ament_cmake_args' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'catkin_cmake_args' from command line to 'None'
+[0.252s] Level 5:colcon.colcon_core.verb:set package 'plant_mapper' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.252s] DEBUG:colcon.colcon_core.verb:Building package 'plant_mapper' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/falinux/CBL_twinning/build/plant_mapper', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/falinux/CBL_twinning/install/plant_mapper', 'merge_install': False, 'path': '/home/falinux/CBL_twinning/src/plant_mapper', 'symlink_install': False, 'test_result_base': None}
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'cmake_target' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'cmake_clean_cache' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'cmake_clean_first' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'cmake_force_configure' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'ament_cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'catkin_cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'tb3_safety_stop' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.253s] DEBUG:colcon.colcon_core.verb:Building package 'tb3_safety_stop' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/falinux/CBL_twinning/build/tb3_safety_stop', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/falinux/CBL_twinning/install/tb3_safety_stop', 'merge_install': False, 'path': '/home/falinux/CBL_twinning/src/tb3_safety_stop', 'symlink_install': False, 'test_result_base': None}
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'cmake_target' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'cmake_clean_cache' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'cmake_clean_first' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'cmake_force_configure' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'ament_cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'catkin_cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'turtlebot3_teleop' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.253s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot3_teleop' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/falinux/CBL_twinning/build/turtlebot3_teleop', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/falinux/CBL_twinning/install/turtlebot3_teleop', 'merge_install': False, 'path': '/home/falinux/CBL_twinning/src/turtlebot3_teleop', 'symlink_install': False, 'test_result_base': None}
+[0.253s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.254s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.254s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/falinux/CBL_twinning/src/border_guard' with build type 'ament_python'
+[0.254s] Level 1:colcon.colcon_core.shell:create_environment_hook('border_guard', 'ament_prefix_path')
+[0.257s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.257s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/hook/ament_prefix_path.dsv'
+[0.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/hook/ament_prefix_path.sh'
+[0.270s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.279s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/falinux/CBL_twinning/src/border_recorder' with build type 'ament_python'
+[0.280s] Level 1:colcon.colcon_core.shell:create_environment_hook('border_recorder', 'ament_prefix_path')
+[0.280s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/hook/ament_prefix_path.dsv'
+[0.282s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/hook/ament_prefix_path.sh'
+[0.283s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.287s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/falinux/CBL_twinning/src/my_tb3_world' with build type 'ament_python'
+[0.287s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_tb3_world', 'ament_prefix_path')
+[0.287s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/hook/ament_prefix_path.dsv'
+[0.288s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/hook/ament_prefix_path.sh'
+[0.288s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.291s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/falinux/CBL_twinning/src/plant_mapper' with build type 'ament_python'
+[0.291s] Level 1:colcon.colcon_core.shell:create_environment_hook('plant_mapper', 'ament_prefix_path')
+[0.292s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/hook/ament_prefix_path.dsv'
+[0.292s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/hook/ament_prefix_path.sh'
+[0.293s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.299s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/falinux/CBL_twinning/src/tb3_safety_stop' with build type 'ament_python'
+[0.300s] Level 1:colcon.colcon_core.shell:create_environment_hook('tb3_safety_stop', 'ament_prefix_path')
+[0.300s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/hook/ament_prefix_path.dsv'
+[0.301s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/hook/ament_prefix_path.sh'
+[0.301s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.305s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/falinux/CBL_twinning/src/turtlebot3_teleop' with build type 'ament_python'
+[0.305s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot3_teleop', 'ament_prefix_path')
+[0.305s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/hook/ament_prefix_path.dsv'
+[0.306s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/hook/ament_prefix_path.sh'
+[0.307s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.601s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/falinux/CBL_twinning/src/border_guard'
+[0.601s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.897s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/falinux/CBL_twinning/src/border_recorder'
+[0.898s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.205s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/falinux/CBL_twinning/src/my_tb3_world'
+[1.205s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.504s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/falinux/CBL_twinning/src/plant_mapper'
+[1.504s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.810s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/falinux/CBL_twinning/src/tb3_safety_stop'
+[1.811s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.137s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/falinux/CBL_twinning/src/turtlebot3_teleop'
+[2.137s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.211s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/falinux/CBL_twinning/src/turtlebot3_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/turtlebot3_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot3_teleop build --build-base /home/falinux/CBL_twinning/build/turtlebot3_teleop/build install --record /home/falinux/CBL_twinning/build/turtlebot3_teleop/install.log --single-version-externally-managed install_data
+[3.302s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/falinux/CBL_twinning/src/plant_mapper': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plant_mapper build --build-base /home/falinux/CBL_twinning/build/plant_mapper/build install --record /home/falinux/CBL_twinning/build/plant_mapper/install.log --single-version-externally-managed install_data
+[3.322s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/falinux/CBL_twinning/src/border_recorder': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_recorder/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_recorder build --build-base /home/falinux/CBL_twinning/build/border_recorder/build install --record /home/falinux/CBL_twinning/build/border_recorder/install.log --single-version-externally-managed install_data
+[3.331s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/falinux/CBL_twinning/src/tb3_safety_stop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/tb3_safety_stop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tb3_safety_stop build --build-base /home/falinux/CBL_twinning/build/tb3_safety_stop/build install --record /home/falinux/CBL_twinning/build/tb3_safety_stop/install.log --single-version-externally-managed install_data
+[3.439s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/falinux/CBL_twinning/src/border_guard': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_guard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_guard build --build-base /home/falinux/CBL_twinning/build/border_guard/build install --record /home/falinux/CBL_twinning/build/border_guard/install.log --single-version-externally-managed install_data
+[3.460s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/falinux/CBL_twinning/src/my_tb3_world': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/my_tb3_world/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_tb3_world build --build-base /home/falinux/CBL_twinning/build/my_tb3_world/build install --record /home/falinux/CBL_twinning/build/my_tb3_world/install.log --single-version-externally-managed install_data
+[4.215s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/falinux/CBL_twinning/src/tb3_safety_stop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/tb3_safety_stop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tb3_safety_stop build --build-base /home/falinux/CBL_twinning/build/tb3_safety_stop/build install --record /home/falinux/CBL_twinning/build/tb3_safety_stop/install.log --single-version-externally-managed install_data
+[4.216s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop' for CMake module files
+[4.217s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop' for CMake config files
+[4.219s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop/lib'
+[4.219s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop/bin'
+[4.219s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/pkgconfig/tb3_safety_stop.pc'
+[4.219s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop/lib/python3.12/site-packages'
+[4.220s] Level 1:colcon.colcon_core.shell:create_environment_hook('tb3_safety_stop', 'pythonpath')
+[4.220s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/hook/pythonpath.dsv'
+[4.221s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/hook/pythonpath.sh'
+[4.222s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/tb3_safety_stop/bin'
+[4.222s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tb3_safety_stop)
+[4.222s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/package.dsv'
+[4.223s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/package.sh'
+[4.223s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/package.bash'
+[4.224s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/tb3_safety_stop/share/tb3_safety_stop/package.zsh'
+[4.225s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/falinux/CBL_twinning/install/tb3_safety_stop/share/colcon-core/packages/tb3_safety_stop)
+[4.289s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop' for CMake module files
+[4.290s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/falinux/CBL_twinning/src/turtlebot3_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/turtlebot3_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot3_teleop build --build-base /home/falinux/CBL_twinning/build/turtlebot3_teleop/build install --record /home/falinux/CBL_twinning/build/turtlebot3_teleop/install.log --single-version-externally-managed install_data
+[4.291s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop' for CMake config files
+[4.292s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib'
+[4.293s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop/bin'
+[4.293s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/pkgconfig/turtlebot3_teleop.pc'
+[4.294s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop/lib/python3.12/site-packages'
+[4.294s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot3_teleop', 'pythonpath')
+[4.294s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/hook/pythonpath.dsv'
+[4.298s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/hook/pythonpath.sh'
+[4.300s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/turtlebot3_teleop/bin'
+[4.300s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot3_teleop)
+[4.300s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/package.dsv'
+[4.301s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/package.sh'
+[4.301s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/package.bash'
+[4.302s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/turtlebot3_teleop/package.zsh'
+[4.302s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/falinux/CBL_twinning/install/turtlebot3_teleop/share/colcon-core/packages/turtlebot3_teleop)
+[4.374s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard' for CMake module files
+[4.376s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/falinux/CBL_twinning/src/border_guard' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_guard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_guard build --build-base /home/falinux/CBL_twinning/build/border_guard/build install --record /home/falinux/CBL_twinning/build/border_guard/install.log --single-version-externally-managed install_data
+[4.378s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard' for CMake config files
+[4.384s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard/lib'
+[4.384s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard/bin'
+[4.385s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard/lib/pkgconfig/border_guard.pc'
+[4.385s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages'
+[4.385s] Level 1:colcon.colcon_core.shell:create_environment_hook('border_guard', 'pythonpath')
+[4.386s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/hook/pythonpath.dsv'
+[4.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/hook/pythonpath.sh'
+[4.389s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_guard/bin'
+[4.389s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(border_guard)
+[4.389s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/package.dsv'
+[4.391s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/package.sh'
+[4.392s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/package.bash'
+[4.393s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/border_guard/share/border_guard/package.zsh'
+[4.393s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/falinux/CBL_twinning/install/border_guard/share/colcon-core/packages/border_guard)
+[4.399s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper' for CMake module files
+[4.400s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper' for CMake config files
+[4.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/falinux/CBL_twinning/src/plant_mapper' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plant_mapper build --build-base /home/falinux/CBL_twinning/build/plant_mapper/build install --record /home/falinux/CBL_twinning/build/plant_mapper/install.log --single-version-externally-managed install_data
+[4.402s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper/lib'
+[4.402s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper/bin'
+[4.402s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper/lib/pkgconfig/plant_mapper.pc'
+[4.402s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages'
+[4.402s] Level 1:colcon.colcon_core.shell:create_environment_hook('plant_mapper', 'pythonpath')
+[4.403s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/hook/pythonpath.dsv'
+[4.403s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/hook/pythonpath.sh'
+[4.404s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/plant_mapper/bin'
+[4.404s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(plant_mapper)
+[4.405s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/package.dsv'
+[4.405s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/package.sh'
+[4.406s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/package.bash'
+[4.406s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/package.zsh'
+[4.407s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/falinux/CBL_twinning/install/plant_mapper/share/colcon-core/packages/plant_mapper)
+[4.424s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder' for CMake module files
+[4.426s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/falinux/CBL_twinning/src/border_recorder' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_recorder/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_recorder build --build-base /home/falinux/CBL_twinning/build/border_recorder/build install --record /home/falinux/CBL_twinning/build/border_recorder/install.log --single-version-externally-managed install_data
+[4.427s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder' for CMake config files
+[4.431s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder/lib'
+[4.431s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder/bin'
+[4.431s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder/lib/pkgconfig/border_recorder.pc'
+[4.432s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages'
+[4.432s] Level 1:colcon.colcon_core.shell:create_environment_hook('border_recorder', 'pythonpath')
+[4.432s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/hook/pythonpath.dsv'
+[4.433s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/hook/pythonpath.sh'
+[4.434s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/border_recorder/bin'
+[4.434s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(border_recorder)
+[4.434s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/package.dsv'
+[4.435s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/package.sh'
+[4.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/package.bash'
+[4.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/border_recorder/share/border_recorder/package.zsh'
+[4.436s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/falinux/CBL_twinning/install/border_recorder/share/colcon-core/packages/border_recorder)
+[4.515s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world' for CMake module files
+[4.515s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/falinux/CBL_twinning/src/my_tb3_world' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/my_tb3_world/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_tb3_world build --build-base /home/falinux/CBL_twinning/build/my_tb3_world/build install --record /home/falinux/CBL_twinning/build/my_tb3_world/install.log --single-version-externally-managed install_data
+[4.516s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world' for CMake config files
+[4.517s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world/lib'
+[4.517s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world/bin'
+[4.517s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world/lib/pkgconfig/my_tb3_world.pc'
+[4.517s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages'
+[4.517s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_tb3_world', 'pythonpath')
+[4.518s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/hook/pythonpath.dsv'
+[4.518s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/hook/pythonpath.sh'
+[4.519s] Level 1:colcon.colcon_core.environment:checking '/home/falinux/CBL_twinning/install/my_tb3_world/bin'
+[4.519s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_tb3_world)
+[4.519s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/package.dsv'
+[4.519s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/package.sh'
+[4.520s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/package.bash'
+[4.520s] INFO:colcon.colcon_core.shell:Creating package script '/home/falinux/CBL_twinning/install/my_tb3_world/share/my_tb3_world/package.zsh'
+[4.520s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/falinux/CBL_twinning/install/my_tb3_world/share/colcon-core/packages/my_tb3_world)
+[4.520s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.521s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.521s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.521s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.530s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.531s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.531s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.580s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.581s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/falinux/CBL_twinning/install/local_setup.sh'
+[4.583s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/falinux/CBL_twinning/install/_local_setup_util_sh.py'
+[4.585s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/falinux/CBL_twinning/install/setup.sh'
+[4.587s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/falinux/CBL_twinning/install/local_setup.bash'
+[4.588s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/falinux/CBL_twinning/install/setup.bash'
+[4.590s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/falinux/CBL_twinning/install/local_setup.zsh'
+[4.591s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/falinux/CBL_twinning/install/setup.zsh'

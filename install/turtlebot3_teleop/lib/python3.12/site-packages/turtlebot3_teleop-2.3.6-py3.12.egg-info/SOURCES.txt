@@ -12,3 +12,4 @@ resource/turtlebot3_teleop
 turtlebot3_teleop/__init__.py
 turtlebot3_teleop/script/__init__.py
 turtlebot3_teleop/script/teleop_keyboard.py
+turtlebot3_teleop/script/teleop_robin.py

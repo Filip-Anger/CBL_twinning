@@ -1,16 +1,3 @@
-import rclpy
-from rclpy.node import Node
-
-from geometry_msgs.msg import TwistStamped
-from nav_msgs.msg import Odometry
-
-import threading
-import sys
-import termios
-import tty
-import json
-
-
 #!/usr/bin/env python
 #
 # Copyright (c) 2011, Willow Garage, Inc.
@@ -74,7 +61,7 @@ TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 msg = """
 Control Your TurtleBot3!
 ---------------------------
-Moving around AND MAPPING:
+Moving around:
         w
    a    s    d
         x
@@ -84,7 +71,6 @@ a/d : increase/decrease angular velocity (Burger : ~ 2.84, Waffle and Waffle Pi 
 
 space key, s : force stop
 
-PRESS M TO MAP A PLANT
 CTRL-C to quit
 """
 
@@ -92,69 +78,6 @@ e = """
 Communications Failed
 """
 
-class PlantMapper(Node):
-
-    def __init__(self):
-        super().__init__('plant_mapper')
-
-        # Publisher
-        self.cmd_pub = self.create_publisher(
-            TwistStamped,
-            '/cmd_vel_raw',
-            10
-        )
-
-        # Subscriber
-        self.odom_sub = self.create_subscription(
-            Odometry,
-            '/odom',
-            self.odom_callback,
-            10
-        )
-
-        # Current robot pose
-        self.current_x = 0.0
-        self.current_y = 0.0
-
-        self.current_qx = 0.0
-        self.current_qy = 0.0
-        self.current_qz = 0.0
-        self.current_qw = 1.0
-
-        # Saved plants
-        self.plants = []
-
-        self.get_logger().info(
-            "\nControls:\n"
-            "w = forward\n"
-            "s = backward\n"
-            "a = rotate left\n"
-            "d = rotate right\n"
-            "x = stop\n\n"
-            "m = save plant\n"
-            "e = export plants\n"
-            "q = quit\n"
-        )
-    
-        # Separate thread for keyboard
-        self.keyboard_thread = threading.Thread(
-            target=self.keyboard_listener,
-            daemon=True
-        )
-        self.keyboard_thread.start()
-
-    # Extract position.
-    def odom_callback(self, msg):
-
-        pose = msg.pose.pose
-
-        self.current_x = pose.position.x
-        self.current_y = pose.position.y
-
-        self.current_qx = pose.orientation.x
-        self.current_qy = pose.orientation.y
-        self.current_qz = pose.orientation.z
-        self.current_qw = pose.orientation.w
 
 def get_key(settings):
     if os.name == 'nt':
@@ -210,49 +133,21 @@ def check_angular_limit_velocity(velocity):
         return constrain(velocity, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
     else:
         return constrain(velocity, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
-def save_plant(self):
 
-    plant = {
-        "x": self.current_x,
-        "y": self.current_y,
-        "qx": self.current_qx,
-        "qy": self.current_qy,
-        "qz": self.current_qz,
-        "qw": self.current_qw
-    }
-
-    self.plants.append(plant)
-
-    self.get_logger().info(
-        f"Plant {len(self.plants)} saved "
-        f"at ({self.current_x:.2f}, {self.current_y:.2f})"
-    )
-
-def export_plants(self):
-
-    with open("plants.json", "w") as f:
-        json.dump(
-            self.plants,
-            f,
-            indent=4
-        )
-
-    self.get_logger().info(
-        f"Exported {len(self.plants)} plants to plants.json"
-    )
 
 def main():
     settings = None
     if os.name != 'nt':
         settings = termios.tcgetattr(sys.stdin)
 
-    node = PlantMapper()
-    rclpy.init(node)
+    rclpy.init()
     ROS_DISTRO = os.environ.get('ROS_DISTRO')
     qos = QoSProfile(depth=10)
     node = rclpy.create_node('teleop_keyboard')
- 
-    pub = node.create_publisher(TwistStamped, 'cmd_vel', qos)
+    if ROS_DISTRO == 'humble':
+        pub = node.create_publisher(Twist, 'cmd_vel', qos)
+    else:
+        pub = node.create_publisher(TwistStamped, 'cmd_vel', qos)
 
     status = 0
     target_linear_velocity = 0.0
@@ -290,8 +185,6 @@ def main():
                 target_angular_velocity = 0.0
                 control_angular_velocity = 0.0
                 print_vels(target_linear_velocity, target_angular_velocity)
-            elif key == 'm':
-                self.save_plant()
             else:
                 if (key == '\x03'):
                     break
@@ -339,16 +232,26 @@ def main():
         print(e)
 
     finally:
-        twist_stamped = TwistStamped()
-        twist_stamped.header.stamp = Clock().now().to_msg()
-        twist_stamped.header.frame_id = ''
-        twist_stamped.twist.linear.x = control_linear_velocity
-        twist_stamped.twist.linear.y = 0.0
-        twist_stamped.twist.linear.z = 0.0
-        twist_stamped.twist.angular.x = 0.0
-        twist_stamped.twist.angular.y = 0.0
-        twist_stamped.twist.angular.z = control_angular_velocity
-        pub.publish(twist_stamped)
+        if ROS_DISTRO == 'humble':
+            twist = Twist()
+            twist.linear.x = 0.0
+            twist.linear.y = 0.0
+            twist.linear.z = 0.0
+            twist.angular.x = 0.0
+            twist.angular.y = 0.0
+            twist.angular.z = 0.0
+            pub.publish(twist)
+        else:
+            twist_stamped = TwistStamped()
+            twist_stamped.header.stamp = Clock().now().to_msg()
+            twist_stamped.header.frame_id = ''
+            twist_stamped.twist.linear.x = control_linear_velocity
+            twist_stamped.twist.linear.y = 0.0
+            twist_stamped.twist.linear.z = 0.0
+            twist_stamped.twist.angular.x = 0.0
+            twist_stamped.twist.angular.y = 0.0
+            twist_stamped.twist.angular.z = control_angular_velocity
+            pub.publish(twist_stamped)
 
         if os.name != 'nt':
             termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
@@ -356,4 +259,3 @@ def main():
 
 if __name__ == '__main__':
     main()
- 

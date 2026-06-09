@@ -1,0 +1,21 @@
+[3.184s] Invoking command in '/home/falinux/CBL_twinning/src/border_guard': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_guard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_guard build --build-base /home/falinux/CBL_twinning/build/border_guard/build install --record /home/falinux/CBL_twinning/build/border_guard/install.log --single-version-externally-managed install_data
+[3.643s] running egg_info
+[3.677s] writing ../../build/border_guard/border_guard.egg-info/PKG-INFO
+[3.677s] writing dependency_links to ../../build/border_guard/border_guard.egg-info/dependency_links.txt
+[3.677s] writing entry points to ../../build/border_guard/border_guard.egg-info/entry_points.txt
+[3.677s] writing requirements to ../../build/border_guard/border_guard.egg-info/requires.txt
+[3.678s] writing top-level names to ../../build/border_guard/border_guard.egg-info/top_level.txt
+[3.747s] reading manifest file '../../build/border_guard/border_guard.egg-info/SOURCES.txt'
+[3.750s] writing manifest file '../../build/border_guard/border_guard.egg-info/SOURCES.txt'
+[3.750s] running build
+[3.750s] running build_py
+[3.750s] running install
+[3.763s] running install_lib
+[3.796s] running install_data
+[3.797s] running install_egg_info
+[3.844s] removing '/home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard-0.1.0-py3.12.egg-info' (and everything under it)
+[3.844s] Copying ../../build/border_guard/border_guard.egg-info to /home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages/border_guard-0.1.0-py3.12.egg-info
+[3.845s] running install_scripts
+[4.062s] Installing border_guard_node script to /home/falinux/CBL_twinning/install/border_guard/lib/border_guard
+[4.063s] writing list of installed files to '/home/falinux/CBL_twinning/build/border_guard/install.log'
+[4.121s] Invoked command in '/home/falinux/CBL_twinning/src/border_guard' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_guard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_guard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_guard build --build-base /home/falinux/CBL_twinning/build/border_guard/build install --record /home/falinux/CBL_twinning/build/border_guard/install.log --single-version-externally-managed install_data

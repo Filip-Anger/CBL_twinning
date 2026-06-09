@@ -9,7 +9,16 @@ setup.py
 ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
 ../../build/plant_mapper/plant_mapper.egg-info/zip-safe
 plant_mapper/__init__.py
+plant_mapper/farm_navigator.py
+plant_mapper/farm_twin.py
+plant_mapper/pest_spread.py
 plant_mapper/plant_mapper.py
+plant_mapper/web/app.js
+plant_mapper/web/index.html
+plant_mapper/web/map.png
+plant_mapper/web/playground.pgm
+plant_mapper/web/small.png
+plant_mapper/web/style.css
 resource/plant_mapper
 test/test_copyright.py
 test/test_flake8.py

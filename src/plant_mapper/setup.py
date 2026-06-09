@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import find_packages, setup
 
 package_name = 'plant_mapper'
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'web'), glob('plant_mapper/web/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -21,6 +24,8 @@ setup(
     entry_points={
         'console_scripts': [
             'plant_mapper = plant_mapper.plant_mapper:main',
+            'farm_twin = plant_mapper.farm_twin:main',
+            'farm_navigator = plant_mapper.farm_navigator:main',
         ],
     },
 )

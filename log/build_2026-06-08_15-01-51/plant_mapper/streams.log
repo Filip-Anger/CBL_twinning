@@ -1,0 +1,26 @@
+[0.636s] Invoking command in '/home/falinux/CBL_twinning/src/plant_mapper': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plant_mapper build --build-base /home/falinux/CBL_twinning/build/plant_mapper/build install --record /home/falinux/CBL_twinning/build/plant_mapper/install.log --single-version-externally-managed install_data
+[0.843s] running egg_info
+[0.857s] writing ../../build/plant_mapper/plant_mapper.egg-info/PKG-INFO
+[0.858s] writing dependency_links to ../../build/plant_mapper/plant_mapper.egg-info/dependency_links.txt
+[0.858s] writing entry points to ../../build/plant_mapper/plant_mapper.egg-info/entry_points.txt
+[0.858s] writing requirements to ../../build/plant_mapper/plant_mapper.egg-info/requires.txt
+[0.858s] writing top-level names to ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
+[0.889s] reading manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+[0.889s] writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+[0.890s] running build
+[0.890s] running build_py
+[0.890s] copying plant_mapper/farm_navigator.py -> /home/falinux/CBL_twinning/build/plant_mapper/build/lib/plant_mapper
+[0.890s] running install
+[0.897s] running install_lib
+[0.912s] copying /home/falinux/CBL_twinning/build/plant_mapper/build/lib/plant_mapper/farm_navigator.py -> /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper
+[0.913s] byte-compiling /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/farm_navigator.py to farm_navigator.cpython-312.pyc
+[0.914s] running install_data
+[0.914s] running install_egg_info
+[0.930s] removing '/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info' (and everything under it)
+[0.930s] Copying ../../build/plant_mapper/plant_mapper.egg-info to /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info
+[0.931s] running install_scripts
+[1.030s] Installing farm_navigator script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper
+[1.030s] Installing farm_twin script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper
+[1.030s] Installing plant_mapper script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper
+[1.030s] writing list of installed files to '/home/falinux/CBL_twinning/build/plant_mapper/install.log'
+[1.055s] Invoked command in '/home/falinux/CBL_twinning/src/plant_mapper' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/plant_mapper build --build-base /home/falinux/CBL_twinning/build/plant_mapper/build install --record /home/falinux/CBL_twinning/build/plant_mapper/install.log --single-version-externally-managed install_data

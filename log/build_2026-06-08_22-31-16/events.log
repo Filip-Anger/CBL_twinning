@@ -1,0 +1,8 @@
+[0.000000] (-) TimerEvent: {}
+[0.000667] (-) JobUnselected: {'identifier': 'border_guard'}
+[0.000714] (-) JobUnselected: {'identifier': 'border_recorder'}
+[0.000737] (-) JobUnselected: {'identifier': 'my_tb3_world'}
+[0.000754] (-) JobUnselected: {'identifier': 'plant_mapper'}
+[0.000770] (-) JobUnselected: {'identifier': 'tb3_safety_stop'}
+[0.000784] (-) JobUnselected: {'identifier': 'turtlebot3_teleop'}
+[0.001041] (-) EventReactorShutdown: {}
