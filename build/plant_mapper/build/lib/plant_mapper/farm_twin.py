@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 from nav_msgs.msg import Odometry
+from geometry_msgs.msg import PoseWithCovarianceStamped
 import tf2_ros
 
 import http.server
@@ -84,6 +85,19 @@ class FarmTwin(Node):
             10
         )
 
+        # Fallback AMCL coordinates
+        self.amcl_x = 0.0
+        self.amcl_y = 0.0
+        self.amcl_yaw = 0.0
+        self.has_amcl = False
+
+        self.amcl_sub = self.create_subscription(
+            PoseWithCovarianceStamped,
+            '/amcl_pose',
+            self.amcl_callback,
+            10
+        )
+
         # Publisher for waypoints
         self.waypoints_pub = self.create_publisher(
             String,
@@ -160,23 +174,48 @@ class FarmTwin(Node):
         self.odom_y = pose.position.y
         self.odom_yaw = get_yaw_from_quaternion(pose.orientation)
 
+    def amcl_callback(self, msg):
+        pose = msg.pose.pose
+        self.amcl_x = pose.position.x
+        self.amcl_y = pose.position.y
+        self.amcl_yaw = get_yaw_from_quaternion(pose.orientation)
+        self.has_amcl = True
+
     def get_robot_pose(self):
-        try:
-            # Look up transformation map -> base_link
-            now = rclpy.time.Time()
-            trans = self.tf_buffer.lookup_transform(
-                'map',
-                'base_link',
-                now,
-                rclpy.duration.Duration(seconds=0.05)
-            )
-            pos = trans.transform.translation
-            ori = trans.transform.rotation
-            yaw = get_yaw_from_quaternion(ori)
-            return {"x": pos.x, "y": pos.y, "yaw": yaw}
-        except Exception:
-            # Fall back to odom coordinates
-            return {"x": self.odom_x, "y": self.odom_y, "yaw": self.odom_yaw}
+        # Try a series of coordinate frame lookups to support both simulation and physical robot setups
+        frames_to_try = [
+            ('map', 'base_link'),
+            ('/map', '/base_link'),
+            ('map', 'base_footprint'),
+            ('/map', '/base_footprint'),
+            ('odom', 'base_link'),
+            ('/odom', '/base_link'),
+            ('odom', 'base_footprint'),
+            ('/odom', '/base_footprint'),
+        ]
+        
+        for map_frame, base_frame in frames_to_try:
+            try:
+                now = rclpy.time.Time()
+                trans = self.tf_buffer.lookup_transform(
+                    map_frame,
+                    base_frame,
+                    now,
+                    rclpy.duration.Duration(seconds=0.02)
+                )
+                pos = trans.transform.translation
+                ori = trans.transform.rotation
+                yaw = get_yaw_from_quaternion(ori)
+                return {"x": pos.x, "y": pos.y, "yaw": yaw}
+            except Exception:
+                continue
+
+        # Fall back to AMCL pose if available
+        if self.has_amcl:
+            return {"x": self.amcl_x, "y": self.amcl_y, "yaw": self.amcl_yaw}
+
+        # Fall back to odom coordinates
+        return {"x": self.odom_x, "y": self.odom_y, "yaw": self.odom_yaw}
 
     def plant_info_callback(self, msg):
         pose = self.get_robot_pose()
