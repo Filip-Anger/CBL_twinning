@@ -182,26 +182,19 @@ class FarmTwin(Node):
         self.has_amcl = True
 
     def get_robot_pose(self):
-        # Try a series of coordinate frame lookups to support both simulation and physical robot setups
-        frames_to_try = [
+        # 1. Try direct map-frame lookups using correct clock type
+        map_frames = [
             ('map', 'base_link'),
-            ('/map', '/base_link'),
             ('map', 'base_footprint'),
-            ('/map', '/base_footprint'),
-            ('odom', 'base_link'),
-            ('/odom', '/base_link'),
-            ('odom', 'base_footprint'),
-            ('/odom', '/base_footprint'),
         ]
-        
-        for map_frame, base_frame in frames_to_try:
+        for map_frame, base_frame in map_frames:
             try:
-                now = rclpy.time.Time()
+                t0 = rclpy.time.Time(clock_type=self.get_clock().clock_type)
                 trans = self.tf_buffer.lookup_transform(
                     map_frame,
                     base_frame,
-                    now,
-                    rclpy.duration.Duration(seconds=0.02)
+                    t0,
+                    rclpy.duration.Duration(seconds=0.05)
                 )
                 pos = trans.transform.translation
                 ori = trans.transform.rotation
@@ -210,11 +203,57 @@ class FarmTwin(Node):
             except Exception:
                 continue
 
-        # Fall back to AMCL pose if available
+        # 2. Try composed lookup to avoid extrapolation failures between map->odom and odom->base
+        base_frames = ['base_link', 'base_footprint']
+        for base_frame in base_frames:
+            try:
+                t0 = rclpy.time.Time(clock_type=self.get_clock().clock_type)
+                t_mo = self.tf_buffer.lookup_transform('map', 'odom', t0, rclpy.duration.Duration(seconds=0.05))
+                t_ob = self.tf_buffer.lookup_transform('odom', base_frame, t0, rclpy.duration.Duration(seconds=0.05))
+                
+                x_mo = t_mo.transform.translation.x
+                y_mo = t_mo.transform.translation.y
+                yaw_mo = get_yaw_from_quaternion(t_mo.transform.rotation)
+                
+                x_ob = t_ob.transform.translation.x
+                y_ob = t_ob.transform.translation.y
+                yaw_ob = get_yaw_from_quaternion(t_ob.transform.rotation)
+                
+                cos_yaw = math.cos(yaw_mo)
+                sin_yaw = math.sin(yaw_mo)
+                x_mb = x_mo + (x_ob * cos_yaw - y_ob * sin_yaw)
+                y_mb = y_mo + (x_ob * sin_yaw + y_ob * cos_yaw)
+                yaw_mb = yaw_mo + yaw_ob
+                return {"x": x_mb, "y": y_mb, "yaw": yaw_mb}
+            except Exception:
+                continue
+
+        # 3. Fall back to AMCL pose topic if available
         if self.has_amcl:
             return {"x": self.amcl_x, "y": self.amcl_y, "yaw": self.amcl_yaw}
 
-        # Fall back to odom coordinates
+        # 4. Try unlocalized odom TF lookups
+        odom_frames = [
+            ('odom', 'base_link'),
+            ('odom', 'base_footprint'),
+        ]
+        for odom_frame, base_frame in odom_frames:
+            try:
+                t0 = rclpy.time.Time(clock_type=self.get_clock().clock_type)
+                trans = self.tf_buffer.lookup_transform(
+                    odom_frame,
+                    base_frame,
+                    t0,
+                    rclpy.duration.Duration(seconds=0.05)
+                )
+                pos = trans.transform.translation
+                ori = trans.transform.rotation
+                yaw = get_yaw_from_quaternion(ori)
+                return {"x": pos.x, "y": pos.y, "yaw": yaw}
+            except Exception:
+                continue
+
+        # 5. Fall back to odom topic
         return {"x": self.odom_x, "y": self.odom_y, "yaw": self.odom_yaw}
 
     def plant_info_callback(self, msg):
