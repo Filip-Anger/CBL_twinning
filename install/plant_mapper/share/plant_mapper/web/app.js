@@ -749,34 +749,21 @@ function drawHeatmap() {
     }
 }
 
-// Clear pest in 17-pixel radius around a grid coordinate (3-pixel radius)
+// Clear pest in 7x7 square around a grid coordinate
 function clearPestInRadius(row, col) {
     const cols = mapConfig.width_pixels;
     const rows = mapConfig.height_pixels;
-
-    // Radius 3 pixels offsets (17 cells total)
-    // max(|dr|, |dc|) <= 1 (9 cells)
-    // plus axial offsets (0, ±2), (±2, 0) (+4 cells)
-    // plus axial offsets (0, ±3), (±3, 0) (+4 cells)
-    const offsets = [];
-    for (let dr = -1; dr <= 1; dr++) {
-        for (let dc = -1; dc <= 1; dc++) {
-            offsets.push({ dr, dc });
-        }
-    }
-    offsets.push(
-        { dr: 0, dc: 2 }, { dr: 0, dc: -2 }, { dr: 2, dc: 0 }, { dr: -2, dc: 0 },
-        { dr: 0, dc: 3 }, { dr: 0, dc: -3 }, { dr: 3, dc: 0 }, { dr: -3, dc: 0 }
-    );
-
     let clearedCount = 0;
-    for (const off of offsets) {
-        const r = row + off.dr;
-        const c = col + off.dc;
-        if (r >= 0 && r < rows && c >= 0 && c < cols) {
-            if (pestGrid[r][c] === 1) {
-                pestGrid[r][c] = 0;
-                clearedCount++;
+
+    for (let dr = -3; dr <= 3; dr++) {
+        for (let dc = -3; dc <= 3; dc++) {
+            const r = row + dr;
+            const c = col + dc;
+            if (r >= 0 && r < rows && c >= 0 && c < cols) {
+                if (pestGrid[r][c] === 1) {
+                    pestGrid[r][c] = 0;
+                    clearedCount++;
+                }
             }
         }
     }
