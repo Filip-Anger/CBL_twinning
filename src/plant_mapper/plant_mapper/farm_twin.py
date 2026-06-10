@@ -13,7 +13,6 @@ import queue
 import math
 import random
 from ament_index_python.packages import get_package_share_directory
-from plant_mapper import pest_spread
 
 def get_yaw_from_quaternion(q):
     siny_cosp = 2.0 * (q.w * q.z + q.x * q.y)
@@ -150,46 +149,10 @@ class FarmTwin(Node):
                     img.save(png_path, 'PNG')
                     self.width_pixels, self.height_pixels = img.size
                 self.get_logger().info(f"Converted map to PNG: {png_path} ({self.width_pixels}x{self.height_pixels} px)")
-                # Initialize the 2D pest spread grid
-                pest_spread.initialize_grid(self.height_pixels, self.width_pixels)
             else:
                 self.get_logger().warn(f"Map pgm file not found: {self.map_pgm}")
         except Exception as e:
             self.get_logger().error(f"Error converting map image: {e}")
-
-    def physical_to_grid(self, x, y):
-        """
-        Converts physical coordinates (x, y) to grid coordinates (row, col).
-        Matches the rotation and resolution geometry of the map display.
-        """
-        width_meters = self.width_pixels * self.resolution
-        height_meters = self.height_pixels * self.resolution
-        
-        rotation = self.map_rotation
-        if rotation == 90:
-            pct_x = (y - self.origin_y) / width_meters
-            pct_y = (x - self.origin_x) / height_meters
-        elif rotation == 180:
-            pct_x = 1.0 - ((x - self.origin_x) / width_meters)
-            pct_y = (y - self.origin_y) / height_meters
-        elif rotation == 270:
-            pct_x = 1.0 - ((y - self.origin_y) / width_meters)
-            pct_y = 1.0 - ((x - self.origin_x) / height_meters)
-        else:
-            pct_x = (x - self.origin_x) / width_meters
-            pct_y = 1.0 - ((y - self.origin_y) / height_meters)
-            
-        pct_x = max(0.0, min(1.0, pct_x))
-        pct_y = max(0.0, min(1.0, pct_y))
-        
-        col = int(round(pct_x * self.width_pixels))
-        row = int(round(pct_y * self.height_pixels))
-        
-        # Clamp coordinates to grid boundary limits
-        col = max(0, min(self.width_pixels - 1, col))
-        row = max(0, min(self.height_pixels - 1, row))
-        
-        return row, col
 
     def odom_callback(self, msg):
         pose = msg.pose.pose
@@ -218,6 +181,28 @@ class FarmTwin(Node):
     def plant_info_callback(self, msg):
         pose = self.get_robot_pose()
 
+        # Parse message payload
+        try:
+            payload = json.loads(msg.data)
+            action_type = payload.get("type", "scan")
+        except Exception:
+            action_type = "scan"
+
+        if action_type == "spray":
+            self.send_log(
+                "FarmTwin",
+                f"Robot arrived and sprayed pesticide at (x: {pose['x']:.2f}, y: {pose['y']:.2f}).",
+                "success"
+            )
+            self.broadcast_sse({
+                "spray_event": {
+                    "x": pose["x"],
+                    "y": pose["y"]
+                },
+                "robot_pose": pose
+            })
+            return
+
         # Generate mock plant metrics
         dryness = random.uniform(10.0, 90.0)
         pest = random.uniform(0.0, 100.0)
@@ -240,10 +225,6 @@ class FarmTwin(Node):
                 "pest": pest
             })
 
-        # Sync scanned plant to Python pest grid
-        row, col = self.physical_to_grid(pose["x"], pose["y"])
-        pest_spread.on_plant_scanned(row, col, pest)
-
         self.send_log(
             "FarmTwin",
             f"Robot arrived and scanned plant at (x: {pose['x']:.2f}, y: {pose['y']:.2f}). "
@@ -253,8 +234,7 @@ class FarmTwin(Node):
 
         self.broadcast_sse({
             "plants": self.plants,
-            "robot_pose": pose,
-            "pest_grid": pest_spread.get_pest_grid()
+            "robot_pose": pose
         })
 
     def nav_status_callback(self, msg):
@@ -331,8 +311,7 @@ class FarmTwin(Node):
                         "plants": node.plants,
                         "robot_pose": node.get_robot_pose(),
                         "nav_status": node.nav_status,
-                        "current_waypoint_index": node.current_waypoint_index,
-                        "pest_grid": pest_spread.get_pest_grid()
+                        "current_waypoint_index": node.current_waypoint_index
                     }
                     self.wfile.write(json.dumps(state).encode('utf-8'))
 
@@ -361,8 +340,7 @@ class FarmTwin(Node):
                             "plants": node.plants,
                             "robot_pose": node.get_robot_pose(),
                             "nav_status": node.nav_status,
-                            "current_waypoint_index": node.current_waypoint_index,
-                            "pest_grid": pest_spread.get_pest_grid()
+                            "current_waypoint_index": node.current_waypoint_index
                         }
                         self.wfile.write(f"data: {json.dumps(initial_state)}\n\n".encode('utf-8'))
                         self.wfile.flush()
@@ -446,8 +424,7 @@ class FarmTwin(Node):
                     )
                     
                     node.broadcast_sse({
-                        "plants": node.plants,
-                        "pest_grid": pest_spread.get_pest_grid()
+                        "plants": node.plants
                     })
                     
                     self.send_response(200)
@@ -459,34 +436,6 @@ class FarmTwin(Node):
                         "x": pose["x"],
                         "y": pose["y"]
                     }).encode('utf-8'))
-
-                elif self.path == '/api/tick_simulation':
-                    try:
-                        data = json.loads(body)
-                        steps = int(data.get("steps", 1))
-                        variance = float(data.get("variance", 0.5))
-                        spread_coef = float(data.get("spread_coef", 1.0))
-                        
-                        pest_spread.tick_simulation(steps, variance, spread_coef)
-                        
-                        pest_grid = pest_spread.get_pest_grid()
-                        node.broadcast_sse({
-                            "pest_grid": pest_grid,
-                            "time_ticks_increment": steps
-                        })
-                        
-                        self.send_response(200)
-                        self.send_header('Content-Type', 'application/json')
-                        self.send_header('Access-Control-Allow-Origin', '*')
-                        self.end_headers()
-                        self.wfile.write(json.dumps({
-                            "status": "ok",
-                            "pest_grid": pest_grid
-                        }).encode('utf-8'))
-                    except Exception as e:
-                        self.send_response(400)
-                        self.end_headers()
-                        self.wfile.write(f"Error executing simulation: {e}".encode('utf-8'))
  
                 elif self.path == '/api/clear':
                     # Reset database and planned waypoints
@@ -495,15 +444,11 @@ class FarmTwin(Node):
                     node.nav_status = "System Idle"
                     node.current_waypoint_index = -1
                     
-                    # Reset the Python simulation grid
-                    pest_spread.initialize_grid(node.height_pixels, node.width_pixels)
-                    
-                    node.send_log("FarmTwin", "Reset digital twin databases and simulation grid.", "warn")
+                    node.send_log("FarmTwin", "Reset digital twin databases.", "warn")
                     node.broadcast_sse({
                         "plants": node.plants,
                         "nav_status": node.nav_status,
-                        "current_waypoint_index": node.current_waypoint_index,
-                        "pest_grid": pest_spread.get_pest_grid()
+                        "current_waypoint_index": node.current_waypoint_index
                     })
                     
                     self.send_response(200)

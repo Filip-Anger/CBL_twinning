@@ -347,6 +347,24 @@ body {
     animation: active-pulse-orange 1.5s infinite;
 }
 
+/* Spray Waypoint Marker styling */
+.waypoint-marker.spray {
+    background-color: rgba(213, 0, 249, 0.25);
+    border: 2px solid #d500f9;
+    color: #e040fb;
+    box-shadow: 0 0 8px rgba(213, 0, 249, 0.4);
+}
+
+.waypoint-marker.spray:hover {
+    box-shadow: 0 0 12px #d500f9;
+}
+
+.waypoint-marker.spray.active {
+    border-color: #ffff00;
+    box-shadow: 0 0 12px #ffff00;
+    animation: active-pulse-orange 1.5s infinite;
+}
+
 /* Scanned Plant Nodes */
 .plant-marker {
     position: absolute;
@@ -420,8 +438,9 @@ body {
 
 .legend-color.robot-pos { border: 2.5px solid var(--accent-cyan); box-shadow: 0 0 6px var(--accent-cyan); background-color: var(--bg-main); }
 .legend-color.waypoint { border: 2px solid var(--accent-orange); background-color: rgba(255, 115, 0, 0.25); }
-.legend-color.plant-node.green-low { border: 2.5px solid rgba(255, 255, 255, 0.2); background-color: rgba(0, 255, 102, 0.15); }
-.legend-color.plant-node.green-high { border: 2.5px solid rgba(255, 255, 255, 0.2); background-color: rgba(0, 255, 102, 0.85); }
+.legend-color.waypoint.spray-wp { border: 2px solid #d500f9; background-color: rgba(213, 0, 249, 0.25); }
+.legend-color.plant-node.healthy { border: 2.5px solid rgba(255, 255, 255, 0.2); background-color: #ffff00; }
+.legend-color.plant-node.infected { border: 2.5px solid rgba(255, 255, 255, 0.2); background-color: #00ff66; }
 
 /* Sidebar Layout */
 .sidebar-layout {

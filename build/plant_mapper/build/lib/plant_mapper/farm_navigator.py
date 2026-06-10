@@ -91,9 +91,11 @@ class FarmNavigator(Node):
         elif self.state == "START_WAYPOINT":
             if self.active_waypoints and self.current_wp_idx < len(self.active_waypoints):
                 wp = self.active_waypoints[self.current_wp_idx]
+                wp_type = wp.get("type", "scan")
+                dest_type = "Waypoint" if wp_type == "scan" else "Spray location"
                 self.publish_status(
                     "Navigating",
-                    f"Navigating to waypoint {self.current_wp_idx + 1}/{len(self.active_waypoints)} at (x: {wp['x']:.2f}, y: {wp['y']:.2f})...",
+                    f"Navigating to {dest_type} {self.current_wp_idx + 1}/{len(self.active_waypoints)} at (x: {wp['x']:.2f}, y: {wp['y']:.2f})...",
                     self.current_wp_idx
                 )
 
@@ -123,18 +125,21 @@ class FarmNavigator(Node):
                 wp = self.active_waypoints[self.current_wp_idx]
 
                 if result == TaskResult.SUCCEEDED:
+                    wp_type = wp.get("type", "scan")
+                    action_name = "Executing crop scan" if wp_type == "scan" else "Spraying pesticide"
                     self.publish_status(
                         "Arrived",
-                        f"Arrived at waypoint {self.current_wp_idx + 1}/{len(self.active_waypoints)} at (x: {wp['x']:.2f}, y: {wp['y']:.2f}). Executing crop scan...",
+                        f"Arrived at waypoint {self.current_wp_idx + 1}/{len(self.active_waypoints)} at (x: {wp['x']:.2f}, y: {wp['y']:.2f}). {action_name}...",
                         self.current_wp_idx
                     )
 
-                    # Trigger crop scan
+                    # Trigger crop scan or spray
                     trigger_msg = String()
                     trigger_msg.data = json.dumps({
                         "waypoint_index": self.current_wp_idx,
                         "x": wp["x"],
-                        "y": wp["y"]
+                        "y": wp["y"],
+                        "type": wp_type
                     })
                     self.plant_info_pub.publish(trigger_msg)
 

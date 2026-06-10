@@ -13,10 +13,14 @@ let plannedWaypoints = [];
 let scannedPlants = [];
 let robotPose = { x: 0.0, y: 0.0, yaw: 0.0 };
 let currentWpIndex = -1;
-let pestVariance = 0.5;
-let spreadCoef = 1.0;
+let spreadCoef = 10.0; // Spread probability default 10%
+let scanPestChance = 80; // Default chance scanned plant has pest (80%)
 let pestGrid = [];
 let timeTicks = 0;
+let processedPlants = new Set(); // Tracks row,col coordinates of processed scan points to lock their rolled pest state
+let waypointMode = 'scan'; // 'scan' or 'spray'
+let autonomousSprayEnabled = true;
+let isAutonomousMissionActive = false;
 
 // DOM Elements
 const mapContainer = document.getElementById('map-container');
@@ -27,14 +31,16 @@ const waypointList = document.getElementById('waypoint-list');
 const terminalLogs = document.getElementById('terminal-logs');
 const selectRotation = document.getElementById('select-rotation');
 const heatmapCanvas = document.getElementById('heatmap-canvas');
-const inputVariance = document.getElementById('input-variance');
-const valVariance = document.getElementById('val-variance');
 const inputSpreadCoef = document.getElementById('input-spread-coef');
 const valSpreadCoef = document.getElementById('val-spread-coef');
+const inputScanPestChance = document.getElementById('input-scan-pest-chance');
+const valScanPestChance = document.getElementById('val-scan-pest-chance');
 const btnTick1 = document.getElementById('btn-tick-1');
 const btnTick10 = document.getElementById('btn-tick-10');
 const btnTick100 = document.getElementById('btn-tick-100');
 const valTimeTicks = document.getElementById('val-time-ticks');
+const checkAutonomousSprayEl = document.getElementById('check-autonomous-spray');
+const checkSprayModeEl = document.getElementById('check-spray-mode');
 
 // Telemetry Elements
 const telX = document.getElementById('tel-x');
@@ -55,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustMapContainerSize();
         redrawOverlay();
     };
+    if (mapImage.complete && mapImage.naturalWidth !== 0) {
+        adjustMapContainerSize();
+        redrawOverlay();
+    }
     window.addEventListener('resize', adjustMapContainerSize);
     connectToEventStream();
     setupEventHandlers();
@@ -219,8 +229,9 @@ function setupEventHandlers() {
         
         const coords = pctToPhysical(pctX, pctY);
         
-        plannedWaypoints.push({ x: coords.x, y: coords.y });
-        addLog('UI', `Waypoint planned at physical coords: (x: ${coords.x}, y: ${coords.y})`, 'info');
+        plannedWaypoints.push({ x: coords.x, y: coords.y, type: waypointMode });
+        const typeLabel = waypointMode === 'spray' ? 'Spray' : 'Scan';
+        addLog('UI', `${typeLabel} waypoint planned at physical coords: (x: ${coords.x}, y: ${coords.y})`, 'info');
         
         updateWaypointsUI();
         redrawOverlay();
@@ -292,6 +303,7 @@ function setupEventHandlers() {
                 scannedPlants = [];
                 pestGrid = []; // Reset simulation grid too!
                 timeTicks = 0; // Reset time ticks counter
+                processedPlants.clear(); // Clear processed scans
                 valTimeTicks.innerText = '0 T';
                 updateWaypointsUI();
                 redrawOverlay();
@@ -303,12 +315,7 @@ function setupEventHandlers() {
         });
     });
 
-    // Pest variance slider input handler
-    inputVariance.addEventListener('input', (e) => {
-        pestVariance = parseFloat(e.target.value);
-        valVariance.innerText = `${pestVariance.toFixed(2)} m²`;
-        drawHeatmap();
-    });
+
 
     // Sim tick buttons handlers
     btnTick1.addEventListener('click', () => {
@@ -326,15 +333,37 @@ function setupEventHandlers() {
     // Spread coefficient slider input handler
     inputSpreadCoef.addEventListener('input', (e) => {
         spreadCoef = parseFloat(e.target.value);
-        valSpreadCoef.innerText = `${spreadCoef.toFixed(2)} %`;
+        valSpreadCoef.innerText = `${spreadCoef.toFixed(1)} %`;
+    });
+
+    // Scan pest chance slider input handler
+    inputScanPestChance.addEventListener('input', (e) => {
+        scanPestChance = parseInt(e.target.value);
+        valScanPestChance.innerText = `${scanPestChance} %`;
+    });
+
+    // Spray mode and autonomous checkboxes change handlers
+    checkAutonomousSprayEl.addEventListener('change', (e) => {
+        autonomousSprayEnabled = e.target.checked;
+        addLog('UI', `Autonomous Spray ${autonomousSprayEnabled ? 'Enabled' : 'Disabled'}.`, 'info');
+        if (autonomousSprayEnabled) {
+            checkAutonomousSpray();
+        }
+    });
+
+    checkSprayModeEl.addEventListener('change', (e) => {
+        waypointMode = e.target.checked ? 'spray' : 'scan';
+        addLog('UI', `Waypoint Mode switched to ${waypointMode.toUpperCase()}`, 'info');
     });
 
     // Initialize UI states explicitly
-    inputVariance.value = pestVariance;
-    valVariance.innerText = `${pestVariance.toFixed(2)} m²`;
     inputSpreadCoef.value = spreadCoef;
-    valSpreadCoef.innerText = `${spreadCoef.toFixed(2)} %`;
+    valSpreadCoef.innerText = `${spreadCoef.toFixed(1)} %`;
+    inputScanPestChance.value = scanPestChance;
+    valScanPestChance.innerText = `${scanPestChance} %`;
     valTimeTicks.innerText = `${timeTicks} T`;
+    checkAutonomousSprayEl.checked = autonomousSprayEnabled;
+    checkSprayModeEl.checked = (waypointMode === 'spray');
 }
 
 // Redraw all markers on top of the map image overlay
@@ -346,13 +375,17 @@ function redrawOverlay() {
         const pct = physicalToPct(wp.x, wp.y);
         const marker = document.createElement('div');
         marker.className = 'waypoint-marker';
+        if (wp.type === 'spray') {
+            marker.classList.add('spray');
+        }
         if (index === currentWpIndex) {
             marker.classList.add('active');
         }
         marker.style.left = `${pct.x * 100}%`;
         marker.style.top = `${pct.y * 100}%`;
         marker.innerText = index + 1;
-        marker.title = `Waypoint ${index + 1}: (${wp.x.toFixed(2)}, ${wp.y.toFixed(2)})`;
+        const typeLabel = wp.type === 'spray' ? 'Spray' : 'Scan';
+        marker.title = `Waypoint ${index + 1} (${typeLabel}): (${wp.x.toFixed(2)}, ${wp.y.toFixed(2)})`;
         
         mapOverlay.appendChild(marker);
     });
@@ -397,11 +430,12 @@ function updateWaypointsUI() {
     plannedWaypoints.forEach((wp, index) => {
         const li = document.createElement('li');
         li.className = 'waypoint-item';
+        const typeLabel = wp.type === 'spray' ? 'Spray' : 'Scan';
         
         li.innerHTML = `
             <div class="waypoint-info">
-                <span class="wp-badge">${index + 1}</span>
-                <span class="wp-coords">WP ${index + 1}: (${wp.x.toFixed(2)}, ${wp.y.toFixed(2)})</span>
+                <span class="wp-badge ${wp.type === 'spray' ? 'spray-badge' : ''}">${index + 1}</span>
+                <span class="wp-coords">WP ${index + 1} (${typeLabel}): (${wp.x.toFixed(2)}, ${wp.y.toFixed(2)})</span>
             </div>
             <button class="btn-remove-wp" onclick="removeWaypoint(${index})">✕</button>
         `;
@@ -425,20 +459,27 @@ function updateNavStatus(status, activeIndex) {
     navStatusText.innerText = status.toUpperCase();
     navStatusText.className = 'status-banner';
     
-    if (status.toLowerCase().includes('idle')) {
+    const statusLower = status.toLowerCase();
+    if (statusLower.includes('idle')) {
         navStatusText.classList.add('idle');
-    } else if (status.toLowerCase().includes('navigating')) {
+        isAutonomousMissionActive = false;
+        setTimeout(checkAutonomousSpray, 500);
+    } else if (statusLower.includes('navigating')) {
         navStatusText.classList.add('navigating');
-    } else if (status.toLowerCase().includes('scanning') || status.toLowerCase().includes('arrived')) {
+    } else if (statusLower.includes('scanning') || statusLower.includes('arrived') || statusLower.includes('spraying')) {
         navStatusText.classList.add('scanning');
-    } else if (status.toLowerCase().includes('complete') || status.toLowerCase().includes('finished')) {
+    } else if (statusLower.includes('complete') || statusLower.includes('finished')) {
         navStatusText.classList.add('complete');
+        isAutonomousMissionActive = false;
+        setTimeout(checkAutonomousSpray, 500);
     } else {
         navStatusText.classList.add('idle');
     }
 
     if (activeIndex !== undefined && activeIndex !== null && activeIndex >= 0 && activeIndex < plannedWaypoints.length) {
-        telCell.innerText = `Waypoint ${activeIndex + 1}`;
+        const wp = plannedWaypoints[activeIndex];
+        const typeLabel = wp && wp.type === 'spray' ? 'Spray' : 'WP';
+        telCell.innerText = `${typeLabel} ${activeIndex + 1}`;
     } else {
         telCell.innerText = 'None';
     }
@@ -510,18 +551,22 @@ function connectToEventStream() {
                 scannedPlants = data.plants;
                 syncPlantsToPestGrid(true); // Force sync new scans to grid
                 needsRedraw = true;
+                checkAutonomousSpray();
             }
 
-            // Sync pest grid from Python simulation
-            if (data.pest_grid) {
-                pestGrid = data.pest_grid;
+            // Handle pesticide spray event
+            if (data.spray_event) {
+                const cols = mapConfig.width_pixels;
+                const rows = mapConfig.height_pixels;
+                const pct = physicalToPct(data.spray_event.x, data.spray_event.y);
+                const col = Math.round(pct.x * cols);
+                const row = Math.round(pct.y * rows);
+
+                if (col >= 0 && col < cols && row >= 0 && row < rows) {
+                    const cleared = clearPestInRadius(row, col);
+                    addLog('Robot', `Sprayed pesticide at (x: ${data.spray_event.x.toFixed(2)}, y: ${data.spray_event.y.toFixed(2)}). Cleared ${cleared} infected pixels.`, 'success');
+                }
                 needsRedraw = true;
-            }
-
-            // Sync simulation time ticks increment
-            if (data.time_ticks_increment !== undefined) {
-                timeTicks += data.time_ticks_increment;
-                valTimeTicks.innerText = `${timeTicks} T`;
             }
             
             // Sync navigation status and index
@@ -550,7 +595,7 @@ function syncPlantsToPestGrid(force = false) {
     const rows = mapConfig.height_pixels;
 
     if (pestGrid.length !== rows || (pestGrid[0] && pestGrid[0].length !== cols)) {
-        pestGrid = Array.from({ length: rows }, () => new Float32Array(cols));
+        pestGrid = Array.from({ length: rows }, () => new Uint8Array(cols));
     }
 
     for (const plant of scannedPlants) {
@@ -558,105 +603,90 @@ function syncPlantsToPestGrid(force = false) {
         const col = Math.round(pct.x * cols);
         const row = Math.round(pct.y * rows);
         if (col >= 0 && col < cols && row >= 0 && row < rows) {
-            // Force override if true, or set if currently empty
-            if (force || pestGrid[row][col] === 0) {
-                pestGrid[row][col] = plant.pest;
-            }
-        }
-    }
-}
-
-// Calculate standard 2D Gaussian spread at each cell of the grid using active pest pixels as sources
-function calculateGaussianSpread(cols, rows) {
-    const grid = Array.from({ length: rows }, () => new Float32Array(cols));
-    
-    // Ensure all scanned plants are synchronized into pestGrid
-    syncPlantsToPestGrid();
-
-    // Iterate through all cells to find sources of pest
-    for (let r_src = 0; r_src < rows; r_src++) {
-        for (let c_src = 0; c_src < cols; c_src++) {
-            const pest = pestGrid[r_src][c_src];
-            if (pest <= 0.01) continue; // Only cells with pest act as sources
-
-            // Convert source cell coordinates to physical (xp, yp)
-            const pctX_src = (c_src + 0.5) / cols;
-            const pctY_src = (r_src + 0.5) / rows;
-            const phys_src = pctToPhysical(pctX_src, pctY_src);
-            const xp = phys_src.x;
-            const yp = phys_src.y;
-
-            // Cutoff radius where relative distribution value y >= 0.05
-            const r_cutoff = Math.sqrt(-2.0 * pestVariance * Math.log(0.05));
-
-            // Get corners in grid space to bound destination iteration
-            const corners = [
-                physicalToPct(xp - r_cutoff, yp - r_cutoff),
-                physicalToPct(xp + r_cutoff, yp - r_cutoff),
-                physicalToPct(xp - r_cutoff, yp + r_cutoff),
-                physicalToPct(xp + r_cutoff, yp + r_cutoff)
-            ];
-
-            let minPctX = 1.0, maxPctX = 0.0;
-            let minPctY = 1.0, maxPctY = 0.0;
-            for (const p of corners) {
-                if (p.x < minPctX) minPctX = p.x;
-                if (p.x > maxPctX) maxPctX = p.x;
-                if (p.y < minPctY) minPctY = p.y;
-                if (p.y > maxPctY) maxPctY = p.y;
-            }
-
-            const minCol = Math.max(0, Math.floor(minPctX * cols));
-            const maxCol = Math.min(cols - 1, Math.ceil(maxPctX * cols));
-            const minRow = Math.max(0, Math.floor(minPctY * rows));
-            const maxRow = Math.min(rows - 1, Math.ceil(maxPctY * rows));
-
-            for (let r_dest = minRow; r_dest <= maxRow; r_dest++) {
-                for (let c_dest = minCol; c_dest <= maxCol; c_dest++) {
-                    const pctX_dest = (c_dest + 0.5) / cols;
-                    const pctY_dest = (r_dest + 0.5) / rows;
-                    const phys_dest = pctToPhysical(pctX_dest, pctY_dest);
-
-                    const dx = phys_dest.x - xp;
-                    const dy = phys_dest.y - yp;
-                    const d2 = dx * dx + dy * dy;
-
-                    const val = Math.exp(-d2 / (2.0 * pestVariance));
-                    if (val >= 0.05) {
-                        grid[r_dest][c_dest] += pest * val;
-                    }
+            const key = `${row},${col}`;
+            if (!processedPlants.has(key)) {
+                processedPlants.add(key);
+                if (Math.random() * 100 < scanPestChance) {
+                    pestGrid[row][col] = 1;
+                } else {
+                    pestGrid[row][col] = 0;
                 }
             }
         }
     }
-    return grid;
 }
+
+
 
 // Perform a specified number of simulation steps and redraw at the end
 function runSimulationTicks(n) {
     if (!mapConfig || !mapConfig.width_pixels) return;
 
-    fetch('/api/tick_simulation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            steps: n,
-            variance: pestVariance,
-            spread_coef: spreadCoef
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.status === 'ok') {
-            pestGrid = data.pest_grid;
-            drawHeatmap();
-        } else {
-            addLog('Server', 'Simulation error: ' + data.message, 'error');
+    const cols = mapConfig.width_pixels;
+    const rows = mapConfig.height_pixels;
+
+    // Ensure pestGrid is allocated and matches map dimensions
+    if (pestGrid.length !== rows || (pestGrid[0] && pestGrid[0].length !== cols)) {
+        pestGrid = Array.from({ length: rows }, () => new Uint8Array(cols));
+    }
+
+    // Sync scanned plants first
+    syncPlantsToPestGrid(false);
+
+    // Perform n steps of grid cellular updates
+    for (let step = 0; step < n; step++) {
+        // Create next state grid
+        const nextPestGrid = Array.from({ length: rows }, () => new Uint8Array(cols));
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                nextPestGrid[r][c] = pestGrid[r][c];
+            }
         }
-    })
-    .catch(err => {
-        addLog('Server', 'Network error running simulation: ' + err, 'error');
-    });
+
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                if (pestGrid[r][c] === 1) {
+                    // Already has pest: stays infected
+                    nextPestGrid[r][c] = 1;
+                } else {
+                    // Healthy pixel: check if any of the 8 neighbors has pest
+                    let hasInfectedNeighbor = false;
+                    for (let dr = -1; dr <= 1; dr++) {
+                        for (let dc = -1; dc <= 1; dc++) {
+                            if (dr === 0 && dc === 0) continue;
+                            const nr = r + dr;
+                            const nc = c + dc;
+                            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols) {
+                                if (pestGrid[nr][nc] === 1) {
+                                    hasInfectedNeighbor = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (hasInfectedNeighbor) break;
+                    }
+
+                    if (hasInfectedNeighbor) {
+                        // Spread probability: spreadCoef % (from the slider, 0 to 20%)
+                        if (Math.random() * 100 < spreadCoef) {
+                            nextPestGrid[r][c] = 1;
+                        }
+                    }
+                }
+            }
+        }
+        pestGrid = nextPestGrid;
+    }
+
+    // Increment time ticks counter and update label
+    timeTicks += n;
+    valTimeTicks.innerText = `${timeTicks} T`;
+
+    // Trigger autonomous spray evaluation
+    checkAutonomousSpray();
+
+    // Trigger single redraw at the end of all steps
+    drawHeatmap();
 }
 
 // Draw map pixels, pest spread, and mapped plants on canvas
@@ -686,33 +716,141 @@ function drawHeatmap() {
 
     // Initialize/sync pestGrid size if needed
     if (pestGrid.length !== rows || (pestGrid[0] && pestGrid[0].length !== cols)) {
-        pestGrid = Array.from({ length: rows }, () => new Float32Array(cols));
+        pestGrid = Array.from({ length: rows }, () => new Uint8Array(cols));
     }
 
-    // Get current Gaussian spread
-    const gaussianPest = calculateGaussianSpread(cols, rows);
+    // Ensure all scanned plants are synchronized into pestGrid
+    syncPlantsToPestGrid(false);
 
-    // 2. Render pest spread (green gradients based on combined active & background spread)
+    // 2. Render pest pixels (infected areas)
+    ctx.fillStyle = '#00ff66';
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
-            const val = Math.max(pestGrid[r][c], gaussianPest[r][c]);
-            if (val > 0.01) {
-                const opacity = Math.min(1.0, val / 100.0);
-                ctx.fillStyle = `rgba(0, 255, 102, ${opacity.toFixed(3)})`;
+            if (pestGrid[r][c] === 1) {
                 ctx.fillRect(c, r, 1, 1);
             }
         }
     }
 
-    // 3. Draw mapped plants as 1 orange pixel on the canvas
-    ctx.fillStyle = '#ff7300';
+    // 3. Render scanned plants: green if has pest, yellow if does not have pest
     for (const plant of scannedPlants) {
         const pct = physicalToPct(plant.x, plant.y);
         const col = Math.round(pct.x * cols);
         const row = Math.round(pct.y * rows);
 
         if (col >= 0 && col < cols && row >= 0 && row < rows) {
+            if (pestGrid[row][col] === 1) {
+                ctx.fillStyle = '#00ff66';
+            } else {
+                ctx.fillStyle = '#ffff00';
+            }
             ctx.fillRect(col, row, 1, 1);
         }
+    }
+}
+
+// Clear pest in 17-pixel radius around a grid coordinate (3-pixel radius)
+function clearPestInRadius(row, col) {
+    const cols = mapConfig.width_pixels;
+    const rows = mapConfig.height_pixels;
+
+    // Radius 3 pixels offsets (17 cells total)
+    // max(|dr|, |dc|) <= 1 (9 cells)
+    // plus axial offsets (0, ±2), (±2, 0) (+4 cells)
+    // plus axial offsets (0, ±3), (±3, 0) (+4 cells)
+    const offsets = [];
+    for (let dr = -1; dr <= 1; dr++) {
+        for (let dc = -1; dc <= 1; dc++) {
+            offsets.push({ dr, dc });
+        }
+    }
+    offsets.push(
+        { dr: 0, dc: 2 }, { dr: 0, dc: -2 }, { dr: 2, dc: 0 }, { dr: -2, dc: 0 },
+        { dr: 0, dc: 3 }, { dr: 0, dc: -3 }, { dr: 3, dc: 0 }, { dr: -3, dc: 0 }
+    );
+
+    let clearedCount = 0;
+    for (const off of offsets) {
+        const r = row + off.dr;
+        const c = col + off.dc;
+        if (r >= 0 && r < rows && c >= 0 && c < cols) {
+            if (pestGrid[r][c] === 1) {
+                pestGrid[r][c] = 0;
+                clearedCount++;
+            }
+        }
+    }
+    return clearedCount;
+}
+
+// Find window of 7x7 with > 50% pest density (>= 25 out of 49 cells)
+function findInfectionCluster() {
+    const cols = mapConfig.width_pixels;
+    const rows = mapConfig.height_pixels;
+    let maxCount = 0;
+    let targetRow = -1;
+    let targetCol = -1;
+
+    for (let r = 3; r < rows - 3; r++) {
+        for (let c = 3; c < cols - 3; c++) {
+            let count = 0;
+            for (let dr = -3; dr <= 3; dr++) {
+                for (let dc = -3; dc <= 3; dc++) {
+                    if (pestGrid[r + dr][c + dc] === 1) {
+                        count++;
+                    }
+                }
+            }
+            if (count >= 25 && count > maxCount) {
+                maxCount = count;
+                targetRow = r;
+                targetCol = c;
+            }
+        }
+    }
+    if (targetRow !== -1 && targetCol !== -1) {
+        return { row: targetRow, col: targetCol, count: maxCount };
+    }
+    return null;
+}
+
+// Check if there is any infection cluster and trigger autonomous spray
+function checkAutonomousSpray() {
+    if (!autonomousSprayEnabled) return;
+    if (isAutonomousMissionActive) return;
+
+    const cluster = findInfectionCluster();
+    if (cluster) {
+        const cols = mapConfig.width_pixels;
+        const rows = mapConfig.height_pixels;
+        
+        // Convert center cell of cluster to physical coordinates
+        const pctX = (cluster.col + 0.5) / cols;
+        const pctY = (cluster.row + 0.5) / rows;
+        const phys = pctToPhysical(pctX, pctY);
+
+        addLog('System', `Autonomous Trigger: Infection cluster detected (density: ${((cluster.count / 49) * 100).toFixed(1)}%) at (x: ${phys.x.toFixed(2)}, y: ${phys.y.toFixed(2)}). Dispatched robot to spray.`, 'warning');
+        
+        isAutonomousMissionActive = true;
+        const sprayWp = { x: phys.x, y: phys.y, type: 'spray' };
+
+        fetch('/api/send_waypoints', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify([sprayWp])
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'ok') {
+                addLog('Server', 'Autonomous spray mission launched.', 'success');
+            } else {
+                addLog('Server', 'Autonomous spray launch failed: ' + data.message, 'error');
+                isAutonomousMissionActive = false;
+            }
+        })
+        .catch(err => {
+            addLog('Server', 'Autonomous spray launch network error: ' + err, 'error');
+            isAutonomousMissionActive = false;
+        });
     }
 }

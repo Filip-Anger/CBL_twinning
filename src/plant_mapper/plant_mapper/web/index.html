@@ -59,8 +59,9 @@
                 <div class="legend">
                     <div class="legend-item"><span class="legend-color robot-pos"></span> Robot Position</div>
                     <div class="legend-item"><span class="legend-color waypoint"></span> Planned Waypoint</div>
-                    <div class="legend-item"><span class="legend-color plant-node green-low"></span> Scanned Plant (Low Pest)</div>
-                    <div class="legend-item"><span class="legend-color plant-node green-high"></span> Scanned Plant (High Pest)</div>
+                    <div class="legend-item"><span class="legend-color waypoint spray-wp"></span> Planned Spray Waypoint</div>
+                    <div class="legend-item"><span class="legend-color plant-node healthy"></span> Scanned Plant (No Pest)</div>
+                    <div class="legend-item"><span class="legend-color plant-node infected"></span> Has Pest (Plant / Infected Area)</div>
                 </div>
             </section>
 
@@ -97,19 +98,20 @@
                 <section class="model-params-card card">
                     <h2><span class="icon">⚙️</span> Model Parameters</h2>
                     <div class="control-group-grid">
-                        <div class="control-group">
+
+                        <div class="control-group" style="margin-top: 12px;">
                             <div class="control-header">
-                                <label for="input-variance">Pest Variance (σ²)</label>
-                                <span id="val-variance" class="control-value">0.50 m²</span>
+                                <label for="input-spread-coef">Spread Probability</label>
+                                <span id="val-spread-coef" class="control-value">10.0 %</span>
                             </div>
-                            <input type="range" id="input-variance" min="0.01" max="1.0" step="0.01" value="0.50" class="slider" />
+                            <input type="range" id="input-spread-coef" min="0" max="20" step="0.5" value="10.0" class="slider" />
                         </div>
                         <div class="control-group" style="margin-top: 12px;">
                             <div class="control-header">
-                                <label for="input-spread-coef">Spread Coef</label>
-                                <span id="val-spread-coef" class="control-value">1.00 %</span>
+                                <label for="input-scan-pest-chance">Scan Pest Chance</label>
+                                <span id="val-scan-pest-chance" class="control-value">80 %</span>
                             </div>
-                            <input type="range" id="input-spread-coef" min="0.01" max="10" step="0.01" value="1.00" class="slider" />
+                            <input type="range" id="input-scan-pest-chance" min="0" max="100" step="1" value="80" class="slider" />
                         </div>
                         <div class="control-group" style="margin-top: 12px;">
                             <div class="control-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
@@ -120,6 +122,20 @@
                                 <button id="btn-tick-10" class="btn btn-secondary" style="flex: 1; padding: 8px 4px; font-size: 11px; justify-content: center; border-radius: 6px;">+10</button>
                                 <button id="btn-tick-100" class="btn btn-secondary" style="flex: 1; padding: 8px 4px; font-size: 11px; justify-content: center; border-radius: 6px;">+100</button>
                                 <span id="val-time-ticks" class="control-value" style="background: rgba(0, 229, 255, 0.1); border: 1px solid var(--accent-cyan); padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: bold; min-width: 50px; text-align: center; margin-bottom: 0; line-height: 1;">0 T</span>
+                            </div>
+                        </div>
+
+                        <!-- Spray Controls -->
+                        <div class="control-group" style="margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div class="checkbox-container" style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="check-autonomous-spray" checked style="cursor: pointer;" />
+                                    <label for="check-autonomous-spray" style="font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-primary);">🤖 Autonomous Spray</label>
+                                </div>
+                                <div class="checkbox-container" style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="check-spray-mode" style="cursor: pointer;" />
+                                    <label for="check-spray-mode" style="font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-primary);">💦 Spray Waypoint Mode</label>
+                                </div>
                             </div>
                         </div>
                     </div>
