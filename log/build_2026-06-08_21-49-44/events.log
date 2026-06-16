@@ -1,0 +1,75 @@
+[0.000000] (-) TimerEvent: {}
+[0.000232] (-) JobUnselected: {'identifier': 'border_guard'}
+[0.000303] (-) JobUnselected: {'identifier': 'border_recorder'}
+[0.000341] (-) JobUnselected: {'identifier': 'my_tb3_world'}
+[0.000370] (-) JobUnselected: {'identifier': 'tb3_safety_stop'}
+[0.000395] (-) JobUnselected: {'identifier': 'turtlebot3_teleop'}
+[0.000423] (plant_mapper) JobQueued: {'identifier': 'plant_mapper', 'dependencies': OrderedDict()}
+[0.000455] (plant_mapper) JobStarted: {'identifier': 'plant_mapper'}
+[0.098585] (-) TimerEvent: {}
+[0.199128] (-) TimerEvent: {}
+[0.299585] (-) TimerEvent: {}
+[0.400104] (-) TimerEvent: {}
+[0.500652] (-) TimerEvent: {}
+[0.601097] (-) TimerEvent: {}
+[0.701435] (-) TimerEvent: {}
+[0.802026] (-) TimerEvent: {}
+[0.905128] (-) TimerEvent: {}
+[1.005626] (-) TimerEvent: {}
+[1.106074] (-) TimerEvent: {}
+[1.206492] (-) TimerEvent: {}
+[1.307042] (-) TimerEvent: {}
+[1.407475] (-) TimerEvent: {}
+[1.509441] (-) TimerEvent: {}
+[1.610942] (-) TimerEvent: {}
+[1.711450] (-) TimerEvent: {}
+[1.813148] (-) TimerEvent: {}
+[1.913823] (-) TimerEvent: {}
+[2.015094] (-) TimerEvent: {}
+[2.115707] (-) TimerEvent: {}
+[2.216594] (-) TimerEvent: {}
+[2.317024] (-) TimerEvent: {}
+[2.417368] (-) TimerEvent: {}
+[2.517819] (-) TimerEvent: {}
+[2.608682] (plant_mapper) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/plant_mapper', 'build', '--build-base', '/home/falinux/CBL_twinning/build/plant_mapper/build', 'install', '--record', '/home/falinux/CBL_twinning/build/plant_mapper/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/falinux/CBL_twinning/src/plant_mapper', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'CHROME_DEVTOOLS_MCP_JS': '/opt/antigravity/resources/app.asar.unpacked/node_modules/chrome-devtools-mcp/build/src/bin/chrome-devtools-mcp.js', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'falinux', 'ANTIGRAVITY_SOURCE_METADATA': '{"tool":{"conversationId":"50924b12-efb5-4b65-9449-609b65c1932c", "stepIndex":169, "toolCall":{"id":"plfnqxfu", "name":"run_command", "argumentsJson":"{\\"CommandLine\\":\\"colcon build --packages-select plant_mapper\\",\\"Cwd\\":\\"/home/falinux/CBL_twinning\\",\\"WaitMsBeforeAsync\\":5000,\\"toolAction\\":\\"Recompile workspace\\",\\"toolSummary\\":\\"Build package\\"}", "thinkingSignature":"EpACCo0CAQw51segN/eq6z37ZsiWegTBzCMORneU8M3hGsE9THq3MmLrhsRLhOn0UtWTl4wP12E8Jm1do6CecADqqH7SUHnX8t37fV8+26xHlHEu4/MF2mninKIDf3g4EkXc7NAVOX6h6qkemVkaNYj+m+w7KE+Tqr9SEhMcDrNOF26V1yEX8DqmEjbv+VjT1LhtMRLL5xcKtkc1+LH72KwG/2kjmdxa9y1L7VuEwtrD40tjmNMXsrGVRHhprPgpwr9QeoexSyd4K1ZCqbCUmNNH87TghaZE8Y3UrgueXDoBevZBLNA8DKDK293ZOlSQwRNW5o0bSOHv3Ac+2rAP5KyDeVzbXbZyo66gg2Sd9fab9ic=", "originalName":"run_command"}}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/falinux', 'CHROME_DESKTOP': 'antigravity.desktop', 'CONDA_SHLVL': '0', 'CAML_LD_LIBRARY_PATH': '/home/falinux/.opam/default/lib/stublibs:/usr/local/lib/ocaml/4.14.1/stublibs:/usr/lib/ocaml/stublibs', 'DISABLE_AUTO_UPDATE': 'true', 'DESKTOP_SESSION': 'ubuntu-xorg', 'NVM_BIN': '/home/falinux/.nvm/versions/node/v25.3.0/bin', 'OCAML_TOPLEVEL_PATH': '/home/falinux/.opam/default/lib/toplevel', 'NVM_INC': '/home/falinux/.nvm/versions/node/v25.3.0/include/node', 'GIO_LAUNCHED_DESKTOP_FILE': '/home/falinux/.local/share/applications/antigravity.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'MANAGERPID': '4369', 'SYSTEMD_EXEC_PID': '4799', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', '_CE_M': '', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '112955', 'AGY_BROWSER_ACTIVE_PORT_FILE': '/home/falinux/.config/Antigravity/DevToolsActivePort', 'NVM_DIR': '/home/falinux/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'ZSH_TMUX_AUTOSTARTED': 'true', 'LOGNAME': 'falinux', 'AGY_BROWSER_WS_URL': 'ws://127.0.0.1:45079/devtools/browser/35946fd9-b34f-4450-9087-bf9917eb1634', '_': '/usr/bin/colcon', 'JOURNAL_STREAM': '9:27639', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'falinux', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/falinux/.gemini/antigravity/bin:/home/falinux/.config/Antigravity/bin:/home/falinux/.opam/default/bin:/home/falinux/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/falinux/.nvm/versions/node/v25.3.0/bin:/home/falinux/anaconda3/condabin:/home/falinux/.juliaup/bin:/home/falinux/.opam/default/bin:/home/falinux/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/falinux/.local/bin: /home/falinux/Downloads/apache-maven-3.9.15-bin/apache-maven-3.9.15/bin:/home/falinux/.local/bin:/home/falinux/.local/bin: /home/falinux/Downloads/apache-maven-3.9.15-bin/apache-maven-3.9.15/bin', 'SESSION_MANAGER': 'local/falinux-Yoga-7-14ITL5:@/tmp/.ICE-unix/4756,unix/falinux-Yoga-7-14ITL5:/tmp/.ICE-unix/4756', 'INVOCATION_ID': 'dcf2c44f89f84f31ac78c9a5ab9e4c67', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu-xorg', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': '', 'SBX_CHROME_API_RQ': '1', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/falinux/anaconda3/bin/python', 'ANTIGRAVITY_PROJECT_ID': '14dd216c-d292-49bf-b917-ad787c69e485', 'SHELL': '/bin/bash', 'ANTIGRAVITY_LS_ADDRESS': 'localhost:37137', 'QT_ACCESSIBILITY': '1', 'NO_AT_BRIDGE': '1', 'GDMSESSION': 'ubuntu-xorg', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'OCAMLTOP_INCLUDE_PATH': '/home/falinux/.opam/default/lib/toplevel:/home/falinux/.opam/default/lib/toplevel:', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'OPAM_SWITCH_PREFIX': '/home/falinux/.opam/default', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'ANTIGRAVITY_TRAJECTORY_ID': 'c4a8c99a-d6d7-4de5-810e-36abf2ea6be4', 'JAVA_HOME': '/usr/lib/jvm/jdk-25-oracle-x64/', 'PWD': '/home/falinux/CBL_twinning/build/plant_mapper', 'TURTLEBOT3_MODEL': 'burger', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg', 'CONDA_EXE': '/home/falinux/anaconda3/bin/conda', 'ZSH_TMUX_AUTOSTART': 'false', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu-xorg:/usr/share/gnome:/home/falinux/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/falinux/CBL_twinning/build/plant_mapper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'MANPATH': '/home/falinux/.nvm/versions/node/v25.3.0/share/man::/home/falinux/.opam/default/man:/home/falinux/.opam/default/man', 'ANTIGRAVITY_CSRF_TOKEN': 'cee19824-fc72-4335-b590-3f220736309b', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.618737] (-) TimerEvent: {}
+[2.721032] (-) TimerEvent: {}
+[2.822446] (-) TimerEvent: {}
+[2.925682] (-) TimerEvent: {}
+[3.026132] (-) TimerEvent: {}
+[3.126562] (-) TimerEvent: {}
+[3.227559] (-) TimerEvent: {}
+[3.250840] (plant_mapper) StdoutLine: {'line': b'running egg_info\n'}
+[3.293781] (plant_mapper) StdoutLine: {'line': b'writing ../../build/plant_mapper/plant_mapper.egg-info/PKG-INFO\n'}
+[3.294389] (plant_mapper) StdoutLine: {'line': b'writing dependency_links to ../../build/plant_mapper/plant_mapper.egg-info/dependency_links.txt\n'}
+[3.295112] (plant_mapper) StdoutLine: {'line': b'writing entry points to ../../build/plant_mapper/plant_mapper.egg-info/entry_points.txt\n'}
+[3.295515] (plant_mapper) StdoutLine: {'line': b'writing requirements to ../../build/plant_mapper/plant_mapper.egg-info/requires.txt\n'}
+[3.295790] (plant_mapper) StdoutLine: {'line': b'writing top-level names to ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt\n'}
+[3.327768] (-) TimerEvent: {}
+[3.394154] (plant_mapper) StdoutLine: {'line': b"reading manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'\n"}
+[3.396068] (plant_mapper) StdoutLine: {'line': b"writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'\n"}
+[3.396975] (plant_mapper) StdoutLine: {'line': b'running build\n'}
+[3.397311] (plant_mapper) StdoutLine: {'line': b'running build_py\n'}
+[3.398244] (plant_mapper) StdoutLine: {'line': b'copying plant_mapper/farm_navigator.py -> /home/falinux/CBL_twinning/build/plant_mapper/build/lib/plant_mapper\n'}
+[3.399267] (plant_mapper) StdoutLine: {'line': b'running install\n'}
+[3.418385] (plant_mapper) StdoutLine: {'line': b'running install_lib\n'}
+[3.428004] (-) TimerEvent: {}
+[3.469063] (plant_mapper) StdoutLine: {'line': b'copying /home/falinux/CBL_twinning/build/plant_mapper/build/lib/plant_mapper/farm_navigator.py -> /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper\n'}
+[3.470334] (plant_mapper) StdoutLine: {'line': b'byte-compiling /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/farm_navigator.py to farm_navigator.cpython-312.pyc\n'}
+[3.476542] (plant_mapper) StdoutLine: {'line': b'running install_data\n'}
+[3.479152] (plant_mapper) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.528090] (-) TimerEvent: {}
+[3.528949] (plant_mapper) StdoutLine: {'line': b"removing '/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[3.529597] (plant_mapper) StdoutLine: {'line': b'Copying ../../build/plant_mapper/plant_mapper.egg-info to /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info\n'}
+[3.531525] (plant_mapper) StdoutLine: {'line': b'running install_scripts\n'}
+[3.628223] (-) TimerEvent: {}
+[3.728985] (-) TimerEvent: {}
+[3.829574] (-) TimerEvent: {}
+[3.844568] (plant_mapper) StdoutLine: {'line': b'Installing farm_navigator script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper\n'}
+[3.844877] (plant_mapper) StdoutLine: {'line': b'Installing farm_twin script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper\n'}
+[3.845548] (plant_mapper) StdoutLine: {'line': b'Installing plant_mapper script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper\n'}
+[3.847489] (plant_mapper) StdoutLine: {'line': b"writing list of installed files to '/home/falinux/CBL_twinning/build/plant_mapper/install.log'\n"}
+[3.929708] (-) TimerEvent: {}
+[3.937866] (plant_mapper) CommandEnded: {'returncode': 0}
+[4.010903] (plant_mapper) JobEnded: {'identifier': 'plant_mapper', 'rc': 0}
+[4.012581] (-) EventReactorShutdown: {}

@@ -1,0 +1,25 @@
+running egg_info
+writing ../../build/plant_mapper/plant_mapper.egg-info/PKG-INFO
+writing dependency_links to ../../build/plant_mapper/plant_mapper.egg-info/dependency_links.txt
+writing entry points to ../../build/plant_mapper/plant_mapper.egg-info/entry_points.txt
+writing requirements to ../../build/plant_mapper/plant_mapper.egg-info/requires.txt
+writing top-level names to ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
+reading manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+writing manifest file '../../build/plant_mapper/plant_mapper.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying plant_mapper/web/app.js -> /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web
+copying plant_mapper/web/style.css -> /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web
+copying plant_mapper/web/index.html -> /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web
+copying plant_mapper/web/map.png -> /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web
+running install_egg_info
+removing '/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/plant_mapper/plant_mapper.egg-info to /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info
+running install_scripts
+Installing farm_navigator script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper
+Installing farm_twin script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper
+Installing plant_mapper script to /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper
+writing list of installed files to '/home/falinux/CBL_twinning/build/plant_mapper/install.log'

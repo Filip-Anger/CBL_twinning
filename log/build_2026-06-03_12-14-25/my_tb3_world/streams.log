@@ -1,0 +1,22 @@
+[2.403s] Invoking command in '/home/falinux/CBL_twinning/src/my_tb3_world': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/my_tb3_world/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_tb3_world build --build-base /home/falinux/CBL_twinning/build/my_tb3_world/build install --record /home/falinux/CBL_twinning/build/my_tb3_world/install.log --single-version-externally-managed install_data
+[2.808s] running egg_info
+[2.830s] writing ../../build/my_tb3_world/my_tb3_world.egg-info/PKG-INFO
+[2.830s] writing dependency_links to ../../build/my_tb3_world/my_tb3_world.egg-info/dependency_links.txt
+[2.831s] writing entry points to ../../build/my_tb3_world/my_tb3_world.egg-info/entry_points.txt
+[2.831s] writing requirements to ../../build/my_tb3_world/my_tb3_world.egg-info/requires.txt
+[2.831s] writing top-level names to ../../build/my_tb3_world/my_tb3_world.egg-info/top_level.txt
+[2.873s] reading manifest file '../../build/my_tb3_world/my_tb3_world.egg-info/SOURCES.txt'
+[2.873s] writing manifest file '../../build/my_tb3_world/my_tb3_world.egg-info/SOURCES.txt'
+[2.874s] running build
+[2.874s] running build_py
+[2.874s] running install
+[2.881s] running install_lib
+[2.904s] running install_data
+[2.905s] running install_egg_info
+[2.940s] removing '/home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world-0.0.0-py3.12.egg-info' (and everything under it)
+[2.941s] Copying ../../build/my_tb3_world/my_tb3_world.egg-info to /home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages/my_tb3_world-0.0.0-py3.12.egg-info
+[2.941s] running install_scripts
+[3.089s] Installing publisher_node script to /home/falinux/CBL_twinning/install/my_tb3_world/lib/my_tb3_world
+[3.089s] Installing subscriber_node script to /home/falinux/CBL_twinning/install/my_tb3_world/lib/my_tb3_world
+[3.090s] writing list of installed files to '/home/falinux/CBL_twinning/build/my_tb3_world/install.log'
+[3.136s] Invoked command in '/home/falinux/CBL_twinning/src/my_tb3_world' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/my_tb3_world/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/my_tb3_world/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_tb3_world build --build-base /home/falinux/CBL_twinning/build/my_tb3_world/build install --record /home/falinux/CBL_twinning/build/my_tb3_world/install.log --single-version-externally-managed install_data

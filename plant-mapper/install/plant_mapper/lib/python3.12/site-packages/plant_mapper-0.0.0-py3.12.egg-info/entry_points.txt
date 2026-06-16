@@ -1,2 +1,0 @@
-[console_scripts]
-plant_mapper = plant_mapper.plant_mapper:main

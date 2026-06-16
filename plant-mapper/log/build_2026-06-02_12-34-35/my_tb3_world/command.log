@@ -1,4 +1,0 @@
-Invoking command in '/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/turtlebot3_ws/install/turtlebot3_teleop:/opt/ros/jazzy /usr/bin/cmake --build /ws/build/my_tb3_world -- -j2 -l2
-Invoked command in '/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/turtlebot3_ws/install/turtlebot3_teleop:/opt/ros/jazzy /usr/bin/cmake --build /ws/build/my_tb3_world -- -j2 -l2
-Invoking command in '/ws/build/my_tb3_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/turtlebot3_ws/install/turtlebot3_teleop:/opt/ros/jazzy /usr/bin/cmake --install /ws/build/my_tb3_world
-Invoked command in '/ws/build/my_tb3_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/turtlebot3_ws/install/turtlebot3_teleop:/opt/ros/jazzy /usr/bin/cmake --install /ws/build/my_tb3_world

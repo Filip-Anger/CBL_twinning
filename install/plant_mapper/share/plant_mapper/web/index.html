@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Twin - Digital Control Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="status-indicator-ring">
+                    <span class="status-dot online"></span>
+                </div>
+                <div class="title-group">
+                    <h1>FARM TWIN</h1>
+                    <p class="subtitle">Digital Twinning & Map-based Waypoint Navigation</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="rotation-control">
+                    <label for="select-rotation">🔄 Rotation:</label>
+                    <select id="select-rotation" class="select-rotation">
+                        <option value="0">0°</option>
+                        <option value="90">90° CW</option>
+                        <option value="180">180°</option>
+                        <option value="270">90° CCW</option>
+                    </select>
+                </div>
+                <button id="btn-manual-scan" class="btn btn-secondary">
+                    <span class="icon">📷</span> Scan Plant here
+                </button>
+                <button id="btn-reset" class="btn btn-danger">
+                    <span class="icon">🔄</span> Reset Twin
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Layout -->
+        <div class="main-layout">
+            <!-- Left Panel: Interactive Map Visualizer -->
+            <section class="grid-section card">
+                <div class="card-header">
+                    <h2><span class="icon">🗺️</span> Map-based Waypoint Planner</h2>
+                    <span id="coords-tooltip" class="info-tag">Click anywhere on the map to place a waypoint</span>
+                </div>
+                <div class="map-wrapper">
+                    <div id="map-container" class="map-container">
+                        <img id="map-image" src="map.png" alt="Farm Map" draggable="false" />
+                        <canvas id="heatmap-canvas" width="100" height="100"></canvas>
+                        <div id="map-overlay" class="map-overlay">
+                            <!-- Dynamically added: robot marker, waypoint pins, and scanned plants -->
+                        </div>
+                    </div>
+                </div>
+                <div class="legend">
+                    <div class="legend-item"><span class="legend-color robot-pos"></span> Robot Position</div>
+                    <div class="legend-item"><span class="legend-color waypoint"></span> Planned Waypoint</div>
+                    <div class="legend-item"><span class="legend-color waypoint spray-wp"></span> Planned Spray Waypoint</div>
+                    <div class="legend-item"><span class="legend-color plant-node healthy"></span> Scanned Plant (No Pest)</div>
+                    <div class="legend-item"><span class="legend-color plant-node infected"></span> Has Pest (Plant / Infected Area)</div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Robot & Waypoint Controls -->
+            <div class="sidebar-layout">
+                <!-- Telemetry Card -->
+                <section class="telemetry-card card">
+                    <h2><span class="icon">⚡</span> Robot Telemetry</h2>
+                    <div class="telemetry-grid">
+                        <div class="telemetry-item">
+                            <label>X-Coordinate</label>
+                            <span id="tel-x" class="telemetry-value">0.00 m</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <label>Y-Coordinate</label>
+                            <span id="tel-y" class="telemetry-value">0.00 m</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <label>Robot Heading</label>
+                            <span id="tel-yaw" class="telemetry-value">0.00°</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <label>Target Waypoint</label>
+                            <span id="tel-cell" class="telemetry-value">None</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <label>Battery Level</label>
+                            <span id="tel-battery" class="telemetry-value">100.0%</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <label>Return Energy</label>
+                            <span id="tel-return-energy" class="telemetry-value">0.0%</span>
+                        </div>
+                    </div>
+                    <div class="nav-status-group">
+                        <label>Navigation Status</label>
+                        <div id="nav-status-text" class="status-banner idle">System Idle</div>
+                    </div>
+                </section>
+
+                <!-- Model Parameters Card -->
+                <section class="model-params-card card">
+                    <h2><span class="icon">⚙️</span> Model Parameters</h2>
+                    <div class="control-group-grid">
+
+                        <div class="control-group" style="margin-top: 12px;">
+                            <div class="control-header">
+                                <label for="input-spread-coef">Spread Probability</label>
+                                <span id="val-spread-coef" class="control-value">10.0 %</span>
+                            </div>
+                            <input type="range" id="input-spread-coef" min="0" max="20" step="0.5" value="10.0" class="slider" />
+                        </div>
+                        <div class="control-group" style="margin-top: 12px;">
+                            <div class="control-header">
+                                <label for="input-scan-pest-chance">Scan Pest Chance</label>
+                                <span id="val-scan-pest-chance" class="control-value">80 %</span>
+                            </div>
+                            <input type="range" id="input-scan-pest-chance" min="0" max="100" step="1" value="80" class="slider" />
+                        </div>
+                        <div class="control-group" style="margin-top: 12px;">
+                            <div class="control-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <label style="text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px; font-weight: 600; font-size: 12px; margin-bottom: 0;">Simulate Time Ticks</label>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <button id="btn-tick-1" class="btn btn-secondary" style="flex: 1; padding: 8px 4px; font-size: 11px; justify-content: center; border-radius: 6px;">+1</button>
+                                <button id="btn-tick-10" class="btn btn-secondary" style="flex: 1; padding: 8px 4px; font-size: 11px; justify-content: center; border-radius: 6px;">+10</button>
+                                <button id="btn-tick-100" class="btn btn-secondary" style="flex: 1; padding: 8px 4px; font-size: 11px; justify-content: center; border-radius: 6px;">+100</button>
+                                <span id="val-time-ticks" class="control-value" style="background: rgba(0, 229, 255, 0.1); border: 1px solid var(--accent-cyan); padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: bold; min-width: 50px; text-align: center; margin-bottom: 0; line-height: 1;">0 T</span>
+                            </div>
+                        </div>
+
+                        <!-- Spray Controls -->
+                        <div class="control-group" style="margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px;">
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div class="checkbox-container" style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="check-autonomous-spray" checked style="cursor: pointer;" />
+                                    <label for="check-autonomous-spray" style="font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-primary);">🤖 Autonomous Spray</label>
+                                </div>
+                                <div class="checkbox-container" style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="check-spray-mode" style="cursor: pointer;" />
+                                    <label for="check-spray-mode" style="font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-primary);">💦 Spray Waypoint Mode</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Waypoint Planner Card -->
+                <section class="waypoint-card card">
+                    <div class="card-header-inline">
+                        <h2><span class="icon">📍</span> Waypoint Route</h2>
+                        <button id="btn-clear-wps" class="btn btn-text btn-xs">Clear All</button>
+                    </div>
+                    <div class="waypoint-list-container">
+                        <ul id="waypoint-list" class="waypoint-list">
+                            <li class="empty-state">No waypoints planned. Click on the map to plan a route.</li>
+                        </ul>
+                    </div>
+                    <button id="btn-launch" class="btn btn-primary btn-block">
+                        <span class="icon">🚀</span> Launch Mission
+                    </button>
+                </section>
+
+                <!-- Terminal / Logs Card -->
+                <section class="logs-card card">
+                    <h2><span class="icon">💻</span> Live Terminal Output</h2>
+                    <div id="terminal-logs" class="terminal-logs">
+                        <div class="log-line system">[SYSTEM] Control center initialized. Stream listening...</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="app.js?v=2"></script>
+</body>
+</html>
