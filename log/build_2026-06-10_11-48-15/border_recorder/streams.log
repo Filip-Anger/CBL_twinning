@@ -1,0 +1,21 @@
+[2.189s] Invoking command in '/home/falinux/CBL_twinning/src/border_recorder': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_recorder/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_recorder build --build-base /home/falinux/CBL_twinning/build/border_recorder/build install --record /home/falinux/CBL_twinning/build/border_recorder/install.log --single-version-externally-managed install_data
+[2.536s] running egg_info
+[2.561s] writing ../../build/border_recorder/border_recorder.egg-info/PKG-INFO
+[2.562s] writing dependency_links to ../../build/border_recorder/border_recorder.egg-info/dependency_links.txt
+[2.562s] writing entry points to ../../build/border_recorder/border_recorder.egg-info/entry_points.txt
+[2.562s] writing requirements to ../../build/border_recorder/border_recorder.egg-info/requires.txt
+[2.563s] writing top-level names to ../../build/border_recorder/border_recorder.egg-info/top_level.txt
+[2.617s] reading manifest file '../../build/border_recorder/border_recorder.egg-info/SOURCES.txt'
+[2.618s] writing manifest file '../../build/border_recorder/border_recorder.egg-info/SOURCES.txt'
+[2.621s] running build
+[2.621s] running build_py
+[2.621s] running install
+[2.636s] running install_lib
+[2.674s] running install_data
+[2.674s] running install_egg_info
+[2.710s] removing '/home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages/border_recorder-0.1.0-py3.12.egg-info' (and everything under it)
+[2.714s] Copying ../../build/border_recorder/border_recorder.egg-info to /home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages/border_recorder-0.1.0-py3.12.egg-info
+[2.715s] running install_scripts
+[3.100s] Installing border_recorder_node script to /home/falinux/CBL_twinning/install/border_recorder/lib/border_recorder
+[3.101s] writing list of installed files to '/home/falinux/CBL_twinning/build/border_recorder/install.log'
+[3.171s] Invoked command in '/home/falinux/CBL_twinning/src/border_recorder' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/falinux/CBL_twinning/build/border_recorder/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/falinux/CBL_twinning/install/border_recorder/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/border_recorder build --build-base /home/falinux/CBL_twinning/build/border_recorder/build install --record /home/falinux/CBL_twinning/build/border_recorder/install.log --single-version-externally-managed install_data
