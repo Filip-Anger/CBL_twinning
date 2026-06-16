@@ -8,19 +8,38 @@
    source install/setup.bash
    export TURTLEBOT3_MODEL=burger
 ```
-### Safety Stop
+### Final PoC simple start-up
 
-1. **Start the simulation:**
+**Simulation:**
 
 ```bash
-   ros2 launch tb3_safety_stop gazebo_twin.launch.py
+   ros2 launch plant_mapper simulation_all.launch.py
 
 ```
 
-2. **Start the safety node:**
+**Physical robot:**
 
 ```bash
-   ros2 launch tb3_safety_stop twin_safety.launch.py 
+   ros2 launch plant_mapper physical_all.launch.py
+
+```
+
+### Final PoC simple start-up
+
+**Simulation:**
+
+```bash
+   ros2 launch my_tb3_world new_world.launch.py
+   ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=src/mapFiles/playground.yaml
+   ros2 run plant-mapper farm_twin
+   ros2 run plant-mapper farm_navigator
+   ros2 run plant-mapper battery
+```
+
+**Physical robot:**
+
+```bash
+   ros2 launch plant_mapper physical_all.launch.py
 
 ```
 
@@ -30,7 +49,7 @@
    ros2 run turtlebot3_teleop teleop_keyboard /cmd_vel:=/cmd_vel_raw
 ```
 
-### Record Border
+### Manual start-up
 Connected to the robot, ready to drive
 
 1. **Start the map recording:**
