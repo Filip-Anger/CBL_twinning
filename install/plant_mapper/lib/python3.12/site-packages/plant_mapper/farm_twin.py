@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import String, Float32
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import PoseWithCovarianceStamped
 import tf2_ros
@@ -65,11 +65,27 @@ class FarmTwin(Node):
         self.odom_y = 0.0
         self.odom_yaw = 0.0
 
+        # Battery metrics
+        self.battery_level = 100.0
+        self.return_energy = 0.0
+
         # Subscriptions
         self.plant_info_sub = self.create_subscription(
             String,
             '/plant_info',
             self.plant_info_callback,
+            10
+        )
+        self.battery_sub = self.create_subscription(
+            Float32,
+            '/robot_battery',
+            self.battery_callback,
+            10
+        )
+        self.return_energy_sub = self.create_subscription(
+            Float32,
+            '/robot_return_energy',
+            self.return_energy_callback,
             10
         )
         self.nav_status_sub = self.create_subscription(
@@ -180,6 +196,18 @@ class FarmTwin(Node):
         self.amcl_y = pose.position.y
         self.amcl_yaw = get_yaw_from_quaternion(pose.orientation)
         self.has_amcl = True
+
+    def battery_callback(self, msg):
+        self.battery_level = msg.data
+        self.broadcast_sse({
+            "battery_level": self.battery_level
+        })
+
+    def return_energy_callback(self, msg):
+        self.return_energy = msg.data
+        self.broadcast_sse({
+            "return_energy": self.return_energy
+        })
 
     def get_robot_pose(self):
         # 1. Try direct map-frame lookups using correct clock type
@@ -321,7 +349,9 @@ class FarmTwin(Node):
             self.nav_status = status_data.get("status", "Unknown")
             self.current_waypoint_index = status_data.get("current_waypoint_index", -1)
             
-            self.send_log("Navigator", status_data.get("message", self.nav_status), "info")
+            msg_text = status_data.get("message", self.nav_status)
+            level = "warn" if "low battery" in msg_text.lower() or "warning" in msg_text.lower() else "info"
+            self.send_log("Navigator", msg_text, level)
             self.broadcast_sse({
                 "nav_status": self.nav_status,
                 "current_waypoint_index": self.current_waypoint_index
@@ -389,7 +419,9 @@ class FarmTwin(Node):
                         "plants": node.plants,
                         "robot_pose": node.get_robot_pose(),
                         "nav_status": node.nav_status,
-                        "current_waypoint_index": node.current_waypoint_index
+                        "current_waypoint_index": node.current_waypoint_index,
+                        "battery_level": node.battery_level,
+                        "return_energy": node.return_energy
                     }
                     self.wfile.write(json.dumps(state).encode('utf-8'))
 
@@ -418,7 +450,9 @@ class FarmTwin(Node):
                             "plants": node.plants,
                             "robot_pose": node.get_robot_pose(),
                             "nav_status": node.nav_status,
-                            "current_waypoint_index": node.current_waypoint_index
+                            "current_waypoint_index": node.current_waypoint_index,
+                            "battery_level": node.battery_level,
+                            "return_energy": node.return_energy
                         }
                         self.wfile.write(f"data: {json.dumps(initial_state)}\n\n".encode('utf-8'))
                         self.wfile.flush()

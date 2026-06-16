@@ -522,6 +522,14 @@ body {
     border-color: rgba(0, 255, 102, 0.3);
 }
 
+.status-banner.returning {
+    background: rgba(255, 179, 0, 0.1);
+    color: #ffb300;
+    border-color: rgba(255, 179, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 179, 0, 0.1);
+    animation: pulse-orange 2s infinite;
+}
+
 /* Waypoints Card */
 .card-header-inline {
     display: flex;

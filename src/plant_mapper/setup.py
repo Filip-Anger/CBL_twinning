@@ -26,6 +26,7 @@ setup(
             'plant_mapper = plant_mapper.plant_mapper:main',
             'farm_twin = plant_mapper.farm_twin:main',
             'farm_navigator = plant_mapper.farm_navigator:main',
+            'battery = plant_mapper.battery:main',
         ],
     },
 )

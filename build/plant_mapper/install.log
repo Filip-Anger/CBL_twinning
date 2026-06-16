@@ -1,10 +1,12 @@
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__init__.py
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/farm_navigator.py
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/plant_mapper.py
+/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/battery.py
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/farm_twin.py
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__pycache__/__init__.cpython-312.pyc
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__pycache__/farm_navigator.cpython-312.pyc
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__pycache__/plant_mapper.cpython-312.pyc
+/home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__pycache__/battery.cpython-312.pyc
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper/__pycache__/farm_twin.cpython-312.pyc
 /home/falinux/CBL_twinning/install/plant_mapper/share/ament_index/resource_index/packages/plant_mapper
 /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/package.xml
@@ -21,6 +23,7 @@
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info/SOURCES.txt
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info/requires.txt
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info/dependency_links.txt
+/home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper/battery
 /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper/farm_navigator
 /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper/farm_twin
 /home/falinux/CBL_twinning/install/plant_mapper/lib/plant_mapper/plant_mapper

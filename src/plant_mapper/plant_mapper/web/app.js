@@ -47,6 +47,8 @@ const telX = document.getElementById('tel-x');
 const telY = document.getElementById('tel-y');
 const telYaw = document.getElementById('tel-yaw');
 const telCell = document.getElementById('tel-cell');
+const telBattery = document.getElementById('tel-battery');
+const telReturnEnergy = document.getElementById('tel-return-energy');
 const navStatusText = document.getElementById('nav-status-text');
 
 // Buttons
@@ -472,6 +474,10 @@ function updateNavStatus(status, activeIndex) {
         navStatusText.classList.add('complete');
         isAutonomousMissionActive = false;
         setTimeout(checkAutonomousSpray, 500);
+    } else if (statusLower.includes('returning') || statusLower.includes('charge')) {
+        navStatusText.classList.add('returning');
+        isAutonomousMissionActive = false;
+        console.warn("LOW BATTERY: Robot forced to return to base. State: returning to charge.");
     } else {
         navStatusText.classList.add('idle');
     }
@@ -572,6 +578,16 @@ function connectToEventStream() {
             // Sync navigation status and index
             if (data.nav_status !== undefined) {
                 updateNavStatus(data.nav_status, data.current_waypoint_index);
+            }
+
+            // Sync battery level
+            if (data.battery_level !== undefined) {
+                telBattery.innerText = `${data.battery_level.toFixed(1)}%`;
+            }
+
+            // Sync return energy
+            if (data.return_energy !== undefined) {
+                telReturnEnergy.innerText = `${data.return_energy.toFixed(1)}%`;
             }
             
             // Print log lines

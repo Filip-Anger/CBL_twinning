@@ -9,6 +9,7 @@ setup.py
 ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
 ../../build/plant_mapper/plant_mapper.egg-info/zip-safe
 plant_mapper/__init__.py
+plant_mapper/battery.py
 plant_mapper/farm_navigator.py
 plant_mapper/farm_twin.py
 plant_mapper/plant_mapper.py
