@@ -132,8 +132,8 @@ class BatteryNode(Node):
         # 1. Publish battery state to dashboard once per 5 seconds (throttled)
         self.battery_publish_timer = self.create_timer(1.0, self.battery_publish_loop)
         
-        # 2. Main battery check loop (every 60 seconds)
-        self.battery_check_timer = self.create_timer(60.0, self.battery_check_loop)
+        # 2. Main battery check loop (every 10 seconds)
+        self.battery_check_timer = self.create_timer(10.0, self.battery_check_loop)
         
         self.get_logger().info("Battery Management Node initialized and running.")
 
