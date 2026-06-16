@@ -8,6 +8,9 @@ setup.py
 ../../build/plant_mapper/plant_mapper.egg-info/requires.txt
 ../../build/plant_mapper/plant_mapper.egg-info/top_level.txt
 ../../build/plant_mapper/plant_mapper.egg-info/zip-safe
+launch/physical_all.launch.py
+launch/simulation_all.launch.py
+launch/twin_system.launch.py
 plant_mapper/__init__.py
 plant_mapper/battery.py
 plant_mapper/farm_navigator.py

@@ -16,6 +16,9 @@
 /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web/small.png
 /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web/playground.pgm
 /home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/web/map.png
+/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/launch/simulation_all.launch.py
+/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/launch/physical_all.launch.py
+/home/falinux/CBL_twinning/install/plant_mapper/share/plant_mapper/launch/twin_system.launch.py
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info/top_level.txt
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info/zip-safe
 /home/falinux/CBL_twinning/install/plant_mapper/lib/python3.12/site-packages/plant_mapper-0.0.0-py3.12.egg-info/PKG-INFO
